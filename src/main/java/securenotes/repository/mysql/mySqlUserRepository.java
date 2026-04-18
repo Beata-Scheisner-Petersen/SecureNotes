@@ -45,11 +45,7 @@ public class MySqlUserRepository implements IUserRepository {
             ResultSet result = statement.executeQuery();
 
             if (result.next()) {
-                return new User(
-                        result.getInt("id"),
-                        result.getString("username"),
-                        result.getString("password")
-                );
+                return map(result);
             }
         } catch (SQLException e) {
             ErrorLogger.log("failed to find user by id", e);
