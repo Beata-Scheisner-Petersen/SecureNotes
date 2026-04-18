@@ -50,7 +50,7 @@ public class Note {
         this.content = content;
     }
 
-    public LocalDateTime getCreated() {
+    public String getCreated() {
         return created;
     }
 
