@@ -6,8 +6,17 @@ public class Note {
     private int usernameId;
     private String title;
     private String content;
-    private LocalDateTime created;
-    private LocalDateTime updated;
+    private String created;
+    private String updated;
+
+    public Note(int id, int usernameId, String title, String content, String created, String updated) {
+        this.id = id;
+        this.usernameId = usernameId;
+        this.title = title;
+        this.content = content;
+        this.created = created;
+        this.updated = updated;
+    }
 
     public int getId() {
         return id;
