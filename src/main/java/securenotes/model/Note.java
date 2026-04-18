@@ -58,7 +58,7 @@ public class Note {
         this.created = created;
     }
 
-    public LocalDateTime getUpdated() {
+    public String getUpdated() {
         return updated;
     }
 
