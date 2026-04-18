@@ -62,7 +62,7 @@ public class Note {
         return updated;
     }
 
-    public void setUpdated(LocalDateTime updated) {
+    public void setUpdated(String updated) {
         this.updated = updated;
     }
 }
