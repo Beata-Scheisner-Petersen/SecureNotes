@@ -1,0 +1,49 @@
+# =========================
+# Maven
+# =========================
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+
+# =========================
+# IntelliJ IDEA
+# =========================
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+# =========================
+# Java
+# =========================
+*.class
+*.log
+
+# =========================
+# OS-specifikt
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Editor/Tooling
+# =========================
+.vscode/
+*.swp
+*.swo
+
+# =========================
+# Environment / config (om du använder)
+# =========================
+.env
+
+# =========================
+# Logs / runtime files
+# =========================
+errors.txt
