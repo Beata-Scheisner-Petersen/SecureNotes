@@ -1,6 +1,5 @@
 package securenotes.model;
 
-import java.time.LocalDateTime;
 public class Note {
     private int id;
     private int usernameId;
