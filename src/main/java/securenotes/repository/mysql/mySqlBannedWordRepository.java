@@ -1,0 +1,67 @@
+package securenotes.repository.mysql;
+
+import securenotes.logging.ErrorLogger;
+import securenotes.repository.interfaces.IBannedWordRepository;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+public class mySqlBannedWordRepository implements IBannedWordRepository {
+    private final List<String> bannedWords = new ArrayList<>();
+    @Override
+    public List<String> getBannedWords() {
+        //noinspection SqlResolve
+        String sql = "SELECT word FROM banned_words";
+
+        try (Connection connection = mySqlConnectionFactory.getSqlConnection();
+             PreparedStatement statement = connection.prepareStatement(sql)) {
+            ResultSet result = statement.executeQuery();
+
+            while (result.next()) {
+                bannedWords.add(result.getString("word"));
+            }
+            return bannedWords;
+        } catch (SQLException e) {
+            System.out.println("Error: failed to fetch banned words! \n");
+            ErrorLogger.log("Failed to fetch banned words", e);
+        }
+        return null;
+    }
+
+    @Override
+    public Boolean addWord(String word) {
+        //noinspection SqlResolve
+        String sql = "INSERT INTO banned_words(word) VALUES (?)";
+
+        try (Connection connection = mySqlConnectionFactory.getSqlConnection();
+             PreparedStatement statement = connection.prepareStatement(sql)){
+            statement.setString(1, word);
+            statement.executeUpdate();
+            return true;
+        } catch (SQLException e) {
+            System.out.println("Error: Fail to add word to banned list. \n");
+            ErrorLogger.log("Fail to add word to banned list", e);
+        }
+        return false;
+    }
+
+    @Override
+    public Boolean deleteWord(String word) {
+        //noinspection SqlResolve
+        String sql = "DELETE FROM banned_words WHERE word = ?";
+
+        try (Connection connection = mySqlConnectionFactory.getSqlConnection();
+             PreparedStatement statement = connection.prepareStatement(sql)){
+            statement.setString(1, word);
+            statement.executeUpdate();
+            return true;
+        } catch (SQLException e) {
+            System.out.println("Error failed to delete word.");
+            ErrorLogger.log("failed to delete word", e);
+        }
+        return false;
+    }
+}
