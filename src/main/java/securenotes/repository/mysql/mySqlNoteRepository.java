@@ -54,15 +54,15 @@ public class mySqlNoteRepository implements INoteRepository {
         String sql = "INSERT INTO notes (user_id, title, content, created_at, updated_at) VALUES (?, ?, ?, ?, ?)";
 
         try (Connection conn = mySqlConnectionFactory.getSqlConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
+             PreparedStatement statement = conn.prepareStatement(sql)) {
 
-            stmt.setInt(1, note.getUsernameId());
-            stmt.setString(2, note.getTitle());
-            stmt.setString(3, note.getContent());
-            stmt.setTimestamp(4, Timestamp.valueOf(note.getCreated()));
-            stmt.setTimestamp(5, Timestamp.valueOf(note.getUpdated()));
+            statement.setInt(1, note.getUsernameId());
+            statement.setString(2, note.getTitle());
+            statement.setString(3, note.getContent());
+            statement.setTimestamp(4, Timestamp.valueOf(note.getCreated()));
+            statement.setTimestamp(5, Timestamp.valueOf(note.getUpdated()));
 
-            stmt.executeUpdate();
+            statement.executeUpdate();
 
         } catch (SQLException e) {
             ErrorLogger.log("Failed to save note", e);
@@ -75,14 +75,14 @@ public class mySqlNoteRepository implements INoteRepository {
         String sql = "UPDATE notes SET title = ?, content = ?, updated_at = ? WHERE id = ?";
 
         try (Connection conn = mySqlConnectionFactory.getSqlConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
+             PreparedStatement statement = conn.prepareStatement(sql)) {
 
-            stmt.setString(1, note.getTitle());
-            stmt.setString(2, note.getContent());
-            stmt.setTimestamp(3, Timestamp.valueOf(note.getUpdated()));
-            stmt.setInt(4, note.getId());
+            statement.setString(1, note.getTitle());
+            statement.setString(2, note.getContent());
+            statement.setTimestamp(3, Timestamp.valueOf(note.getUpdated()));
+            statement.setInt(4, note.getId());
 
-            stmt.executeUpdate();
+            statement.executeUpdate();
 
         } catch (SQLException e) {
             ErrorLogger.log("Failed to update note", e);
@@ -95,10 +95,10 @@ public class mySqlNoteRepository implements INoteRepository {
         String sql = "DELETE FROM notes WHERE id = ?";
 
         try (Connection conn = mySqlConnectionFactory.getSqlConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
+             PreparedStatement statement = conn.prepareStatement(sql)) {
 
-            stmt.setInt(1, id);
-            stmt.executeUpdate();
+            statement.setInt(1, id);
+            statement.executeUpdate();
 
         } catch (SQLException e) {
             ErrorLogger.log("Failed to delete note", e);
