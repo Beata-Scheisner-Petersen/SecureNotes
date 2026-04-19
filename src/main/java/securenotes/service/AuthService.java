@@ -75,7 +75,7 @@ public class AuthService {
 
     private boolean isBannedWord(String input) {
         for (String word : blacklistedContent) {
-            if (input.contains(word) ) {
+            if (input.toLowerCase().contains(word)) {
                 return true;
             }
         }
