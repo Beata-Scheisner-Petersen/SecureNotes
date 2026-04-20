@@ -56,7 +56,7 @@ public class AuthService {
             System.out.println("Error: invalid choice of password");
             return false;
         } else {
-            User user = new User(username, hashedPassword(password));
+            User user = new User(username, BCrypt.hashpw(password, BCrypt.gensalt()));
             userRepository.save(user);
             return true;
         }
