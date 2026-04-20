@@ -25,7 +25,7 @@ public class AuthService {
             return null;
         }
 
-        if (user.getUsername().equals(username) && user.getPassword().equals(hashedPassword(password))) {
+        if (user.getUsername().equals(username) && BCrypt.checkpw(password, user.getPassword())) {
             return new AuthSession(user.getId(), user.getUsername());
         } else {
             Exception exception = new Exception();
