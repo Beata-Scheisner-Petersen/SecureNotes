@@ -10,7 +10,7 @@ public class Note {
 
     public Note(int id, int userId, String title, String content, String created, String updated) {
         this.id = id;
-        this.usernameId = usernameId;
+        this.userId = userId;
         this.title = title;
         this.content = content;
         this.created = created;
