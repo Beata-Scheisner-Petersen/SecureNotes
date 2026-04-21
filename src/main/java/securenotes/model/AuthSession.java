@@ -1,6 +1,5 @@
 package securenotes.model;
 
-import java.time.LocalDateTime;
 public class AuthSession {
     private int userId;
     private String username;
