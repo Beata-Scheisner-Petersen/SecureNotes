@@ -16,6 +16,13 @@ public class Note {
         this.created = created;
         this.updated = updated;
     }
+    public Note(int userId, String title, String content, String created, String updated) {
+        this.userId = userId;
+        this.title = title;
+        this.content = content;
+        this.created = created;
+        this.updated = updated;
+    }
 
     public int getId() {
         return id;
