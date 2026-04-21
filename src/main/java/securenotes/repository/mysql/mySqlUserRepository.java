@@ -22,7 +22,7 @@ public class mySqlUserRepository implements IUserRepository {
             ResultSet result = statement.executeQuery();
 
             if (result.next()) {
-                return map(result);
+                return mapUser(result);
             }
         } catch (SQLException e) {
             Logger.log("failed to find user by id", e);
@@ -41,7 +41,7 @@ public class mySqlUserRepository implements IUserRepository {
             ResultSet result = statement.executeQuery();
 
             if (result.next()) {
-                return map(result);
+                return mapUser(result);
             }
         } catch (SQLException e) {
             Logger.log("failed to find user by id", e);
@@ -66,7 +66,7 @@ public class mySqlUserRepository implements IUserRepository {
             Logger.log("failed to save user", e);
         }
     }
-    private User map(ResultSet result) throws SQLException {
+    private User mapUser(ResultSet result) throws SQLException {
         return new User(
                 result.getInt("id"),
                 result.getString("username"),
