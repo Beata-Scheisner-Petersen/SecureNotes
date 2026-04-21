@@ -1,6 +1,6 @@
 package securenotes.repository.mysql;
 
-import securenotes.logging.ErrorLogger;
+import securenotes.logging.Logger;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -13,13 +13,13 @@ public class mySqlConnectionFactory {
     public static Connection getSqlConnection () {
         RuntimeException runtimeException = new RuntimeException();
         if (URL.isBlank() || USER.isBlank() || PASSWORD.isBlank()) {
-            ErrorLogger.log("Missing required environment variables", runtimeException);
+            Logger.log("Missing required environment variables", runtimeException);
         }
         Connection connection = null;
         try {
             connection = DriverManager.getConnection(URL, USER, PASSWORD);
         } catch (SQLException sqlException) {
-            ErrorLogger.log("failed to connect with the database", sqlException);
+            Logger.log("failed to connect with the database", sqlException);
         }
 
         return connection;

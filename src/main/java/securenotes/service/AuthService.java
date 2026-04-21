@@ -1,7 +1,7 @@
 package securenotes.service;
 
 import org.mindrot.jbcrypt.BCrypt;
-import securenotes.logging.ErrorLogger;
+import securenotes.logging.Logger;
 import securenotes.model.AuthSession;
 import securenotes.model.User;
 import securenotes.repository.interfaces.IUserRepository;
@@ -30,7 +30,7 @@ public class AuthService {
             return new AuthSession(user.getId(), user.getUsername(), dateTimeService.FormatDateTime());
         } else {
             Exception exception = new Exception();
-            ErrorLogger.log("Login failed", exception);
+            Logger.log("Login failed", exception);
             System.out.println("Wrong username or password");
             return null;
         }

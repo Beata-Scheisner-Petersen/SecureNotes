@@ -1,7 +1,7 @@
 package securenotes.repository.mysql;
 
 import org.mindrot.jbcrypt.BCrypt;
-import securenotes.logging.ErrorLogger;
+import securenotes.logging.Logger;
 import securenotes.model.User;
 import securenotes.repository.interfaces.IUserRepository;
 
@@ -25,7 +25,7 @@ public class mySqlUserRepository implements IUserRepository {
                 return map(result);
             }
         } catch (SQLException e) {
-            ErrorLogger.log("failed to find user by id", e);
+            Logger.log("failed to find user by id", e);
         }
         return null;
     }
@@ -44,7 +44,7 @@ public class mySqlUserRepository implements IUserRepository {
                 return map(result);
             }
         } catch (SQLException e) {
-            ErrorLogger.log("failed to find user by id", e);
+            Logger.log("failed to find user by id", e);
         }
         return null;
     }
@@ -63,7 +63,7 @@ public class mySqlUserRepository implements IUserRepository {
             statement.executeUpdate();
         } catch (SQLException e) {
             System.out.println("Error: sql injection failed");
-            ErrorLogger.log("failed to save user", e);
+            Logger.log("failed to save user", e);
         }
     }
     private User map(ResultSet result) throws SQLException {

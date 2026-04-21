@@ -6,7 +6,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-public class ErrorLogger {
+public class Logger {
     private static final String LOG_FILE = "src/main/resources/logs/error.log";
 
     public static synchronized void log(String message, Exception e) {

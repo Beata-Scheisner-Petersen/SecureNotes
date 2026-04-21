@@ -1,6 +1,6 @@
 package securenotes.service;
 
-import securenotes.logging.ErrorLogger;
+import securenotes.logging.Logger;
 import securenotes.model.Note;
 import securenotes.repository.interfaces.INoteRepository;
 
@@ -53,7 +53,7 @@ public class NoteService {
             noteRepository.update(note);
         } catch (Exception e) {
             System.out.println("Failed to update Note");
-            ErrorLogger.log("failed to update note", e);
+            Logger.log("failed to update note", e);
         }
     }
 
@@ -62,7 +62,7 @@ public class NoteService {
             noteRepository.delete(noteId);
         } catch (Exception e) {
             System.out.println("failed to delete note");
-            ErrorLogger.log("Failed to delete note", e);
+            Logger.log("Failed to delete note", e);
         }
     }
 }

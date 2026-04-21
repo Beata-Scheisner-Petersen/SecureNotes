@@ -1,6 +1,6 @@
 package securenotes.repository.mysql;
 
-import securenotes.logging.ErrorLogger;
+import securenotes.logging.Logger;
 import securenotes.model.Note;
 import securenotes.repository.interfaces.INoteRepository;
 
@@ -25,7 +25,7 @@ public class mySqlNoteRepository implements INoteRepository {
             return notes;
         } catch (SQLException e) {
             System.out.println("Failed to fetch notes for user");
-            ErrorLogger.log("Failed to fetch notes for user", e);
+            Logger.log("Failed to fetch notes for user", e);
         }
         return null;
     }
@@ -45,7 +45,7 @@ public class mySqlNoteRepository implements INoteRepository {
             }
         } catch (SQLException e) {
             System.out.println("Failed to fetch notes for user");
-            ErrorLogger.log("Failed to fetch notes for user", e);
+            Logger.log("Failed to fetch notes for user", e);
         }
         return null;
     }
@@ -68,7 +68,7 @@ public class mySqlNoteRepository implements INoteRepository {
 
         } catch (SQLException e) {
             System.out.println("Failed to save note");
-            ErrorLogger.log("Failed to save note", e);
+            Logger.log("Failed to save note", e);
         }
     }
 
@@ -89,7 +89,7 @@ public class mySqlNoteRepository implements INoteRepository {
 
         } catch (SQLException e) {
             System.out.println("Failed to update note");
-            ErrorLogger.log("Failed to update note", e);
+            Logger.log("Failed to update note", e);
         }
     }
 
@@ -106,7 +106,7 @@ public class mySqlNoteRepository implements INoteRepository {
 
         } catch (SQLException e) {
             System.out.println("Failed to delete note");
-            ErrorLogger.log("Failed to delete note", e);
+            Logger.log("Failed to delete note", e);
         }
 
     }

@@ -1,6 +1,6 @@
 package securenotes.repository.mysql;
 
-import securenotes.logging.ErrorLogger;
+import securenotes.logging.Logger;
 import securenotes.repository.interfaces.IBannedWordRepository;
 
 import java.sql.Connection;
@@ -26,7 +26,7 @@ public class mySqlBannedWordRepository implements IBannedWordRepository {
             return bannedWords;
         } catch (SQLException e) {
             System.out.println("Error: failed to fetch banned words! \n");
-            ErrorLogger.log("Failed to fetch banned words", e);
+            Logger.log("Failed to fetch banned words", e);
         }
         return null;
     }
@@ -43,7 +43,7 @@ public class mySqlBannedWordRepository implements IBannedWordRepository {
             return true;
         } catch (SQLException e) {
             System.out.println("Error: Fail to add word to banned list. \n");
-            ErrorLogger.log("Fail to add word to banned list", e);
+            Logger.log("Fail to add word to banned list", e);
         }
         return false;
     }
@@ -60,7 +60,7 @@ public class mySqlBannedWordRepository implements IBannedWordRepository {
             return true;
         } catch (SQLException e) {
             System.out.println("Error failed to delete word.");
-            ErrorLogger.log("failed to delete word", e);
+            Logger.log("failed to delete word", e);
         }
         return false;
     }

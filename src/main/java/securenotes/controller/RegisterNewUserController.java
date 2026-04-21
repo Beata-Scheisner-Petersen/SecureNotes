@@ -1,6 +1,6 @@
 package securenotes.controller;
 
-import securenotes.logging.ErrorLogger;
+import securenotes.logging.Logger;
 import securenotes.service.AuthService;
 import securenotes.service.FormatDateTimeService;
 import securenotes.view.RegisterNewUserView;
@@ -25,10 +25,10 @@ public class RegisterNewUserController {
         String password = register.getPasswordInput(readInput);
 
         if (service.registerNewUser(username, password)) {
-            ErrorLogger.log(String.format("[%s] success to create user: %s", formatDateTimeService.FormatDateTime(), username), exception);
+            Logger.log(String.format("[%s] success to create user: %s", formatDateTimeService.FormatDateTime(), username), exception);
             register.success(username);
         } else {
-            ErrorLogger.log(String.format("[%s] fail to create user: %s", formatDateTimeService.FormatDateTime(), username), exception);
+            Logger.log(String.format("[%s] fail to create user: %s", formatDateTimeService.FormatDateTime(), username), exception);
             register.error(username);
         }
     }

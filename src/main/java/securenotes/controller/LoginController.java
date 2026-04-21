@@ -1,6 +1,6 @@
 package securenotes.controller;
 
-import securenotes.logging.ErrorLogger;
+import securenotes.logging.Logger;
 import securenotes.model.AuthSession;
 import securenotes.service.AuthService;
 import securenotes.service.FormatDateTimeService;
@@ -28,11 +28,11 @@ public class LoginController {
         AuthSession session = service.login(username, password);
 
         if (session == null || !session.isAuthenticated()) {
-            ErrorLogger.log(String.format("[%s] login failed with username: %s \n", dateTimeService.FormatDateTime(), username), exception);
+            Logger.log(String.format("[%s] login failed with username: %s \n", dateTimeService.FormatDateTime(), username), exception);
             loginView.error(username);
             start(readInput);
         } else {
-            ErrorLogger.log(String.format("[%s] login success with username: %s \n", dateTimeService.FormatDateTime(), username), exception);
+            Logger.log(String.format("[%s] login success with username: %s \n", dateTimeService.FormatDateTime(), username), exception);
             loginView.success(username);
         }
     }
