@@ -8,7 +8,7 @@ public class Note {
     private String created;
     private String updated;
 
-    public Note(int id, int usernameId, String title, String content, String created, String updated) {
+    public Note(int id, int userId, String title, String content, String created, String updated) {
         this.id = id;
         this.usernameId = usernameId;
         this.title = title;
