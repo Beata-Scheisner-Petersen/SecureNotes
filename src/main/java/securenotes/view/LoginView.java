@@ -1,0 +1,33 @@
+package securenotes.view;
+
+import java.util.Scanner;
+public class LoginView {
+    private final GetUsernameAndPasswordView credentials = new GetUsernameAndPasswordView();
+    private final ConfirmationView confirmation = new ConfirmationView();
+
+    public void show() {
+        System.out.println("=== Login ===");
+    }
+
+    public String getUsernameInput(Scanner readInput) {
+        return credentials.askForUsername(readInput);
+    }
+
+    public String getPasswordInput(Scanner readInput) {
+        return credentials.askForPassword(readInput);
+    }
+
+    public void success(String username) {
+        confirmation.showSuccess(String.format("""
+                        You success to login with username: %s
+                        ------------------------------------------------------------------
+                        """, username));
+    }
+
+    public void error(String username) {
+        confirmation.showError(String.format("""
+                        You failed to login with username: %s
+                        ------------------------------------------------------------------
+                        """, username));
+    }
+}
