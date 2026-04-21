@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 public class AuthSession {
     private int userId;
     private String username;
-    private LocalDateTime loginTime;
+    private String loginTime;
     private boolean authenticated;
 
     public AuthSession() {
