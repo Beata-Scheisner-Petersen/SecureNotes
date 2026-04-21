@@ -25,8 +25,8 @@ public class Note {
         this.id = id;
     }
 
-    public int getUsernameId() {
-        return usernameId;
+    public int getUserId() {
+        return userId;
     }
 
     public void setUsernameId(int usernameId) {
