@@ -37,7 +37,7 @@ public class AuthSession {
         return loginTime;
     }
 
-    public void setLoginTime(LocalDateTime loginTime) {
+    public void setLoginTime(String loginTime) {
         this.loginTime = loginTime;
     }
 
