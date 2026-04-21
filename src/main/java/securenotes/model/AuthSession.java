@@ -11,7 +11,7 @@ public class AuthSession {
         this.authenticated = false;
     }
 
-    public AuthSession(int userId, String username) {
+    public AuthSession(int userId, String username, String loginTime) {
         this.userId = userId;
         this.username = username;
     }
