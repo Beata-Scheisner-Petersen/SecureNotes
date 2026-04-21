@@ -14,6 +14,7 @@ public class AuthSession {
     public AuthSession(int userId, String username, String loginTime) {
         this.userId = userId;
         this.username = username;
+        this.loginTime = loginTime;
     }
 
     public int getUserId() {
