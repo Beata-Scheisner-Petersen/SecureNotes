@@ -40,6 +40,10 @@ public class AuthSession {
         this.loginTime = loginTime;
     }
 
+    public String getRole() {
+        return role;
+    }
+
     public boolean isAuthenticated() {
         return authenticated;
     }
