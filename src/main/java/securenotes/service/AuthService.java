@@ -16,7 +16,7 @@ public class AuthService {
     private final List<String> blacklistedContent = bannedWordRepository.getBannedWords();
     private FormatDateTimeService dateTimeService;
 
-    public AuthService(mySqlUserRepository userRepository) {
+    public AuthService(IUserRepository userRepository) {
         this.userRepository = userRepository;
     }
 
