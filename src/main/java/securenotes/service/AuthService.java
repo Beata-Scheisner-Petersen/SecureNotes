@@ -4,6 +4,7 @@ import org.mindrot.jbcrypt.BCrypt;
 import securenotes.logging.ErrorLogger;
 import securenotes.model.AuthSession;
 import securenotes.model.User;
+import securenotes.repository.interfaces.IUserRepository;
 import securenotes.repository.mysql.mySqlBannedWordRepository;
 import java.util.List;
 import java.util.regex.Matcher;
