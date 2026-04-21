@@ -33,7 +33,7 @@ public class AuthSession {
         this.username = username;
     }
 
-    public LocalDateTime getLoginTime() {
+    public String getLoginTime() {
         return loginTime;
     }
 
