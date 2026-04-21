@@ -2,7 +2,7 @@ package securenotes.model;
 
 public class Note {
     private int id;
-    private int usernameId;
+    private int userId;
     private String title;
     private String content;
     private String created;
