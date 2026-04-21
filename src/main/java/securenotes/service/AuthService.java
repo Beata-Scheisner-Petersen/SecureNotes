@@ -36,10 +36,6 @@ public class AuthService {
         }
     }
 
-    private String hashedPassword (String password) {
-        return BCrypt.hashpw(password, BCrypt.gensalt());
-    }
-
     public void logout (AuthSession session) {
         if (session != null) {
             session.logout();
