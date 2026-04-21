@@ -27,7 +27,7 @@ public class AuthService {
         }
 
         if (user.getUsername().equals(username) && BCrypt.checkpw(password, user.getPassword())) {
-            return new AuthSession(user.getId(), user.getUsername());
+            return new AuthSession(user.getId(), user.getUsername(), dateTimeService.FormatDateTime());
         } else {
             Exception exception = new Exception();
             ErrorLogger.log("Login failed", exception);
