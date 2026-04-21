@@ -44,6 +44,7 @@ public class AuthService {
 
     public boolean registerNewUser (String username, String password) {
         if (userRepository.findByUsername(username) != null) {
+            Logger.log("Register new user failed. User already exist", exception);
             System.out.println("User already exist");
             return false;
         } else if ((username.length() < 5 || username.length() > 15 || !isValidUsername(username))) {
