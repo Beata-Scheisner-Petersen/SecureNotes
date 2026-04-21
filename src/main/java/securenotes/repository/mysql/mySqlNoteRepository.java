@@ -24,6 +24,7 @@ public class mySqlNoteRepository implements INoteRepository {
             }
             return notes;
         } catch (SQLException e) {
+            System.out.println("Failed to fetch notes for user");
             ErrorLogger.log("Failed to fetch notes for user", e);
         }
         return null;
