@@ -11,7 +11,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class AuthService {
-    private final mySqlUserRepository userRepository;
+    private final IUserRepository userRepository;
     private final mySqlBannedWordRepository bannedWordRepository = new mySqlBannedWordRepository();
     private final List<String> blacklistedContent = bannedWordRepository.getBannedWords();
 
