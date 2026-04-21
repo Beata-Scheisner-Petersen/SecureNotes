@@ -4,6 +4,7 @@ public class AuthSession {
     private int userId;
     private String username;
     private String loginTime;
+    private String role;
     private boolean authenticated;
 
     public AuthSession() {
