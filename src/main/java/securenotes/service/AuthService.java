@@ -5,7 +5,6 @@ import securenotes.logging.ErrorLogger;
 import securenotes.model.AuthSession;
 import securenotes.model.User;
 import securenotes.repository.mysql.mySqlBannedWordRepository;
-import securenotes.repository.mysql.mySqlUserRepository;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
