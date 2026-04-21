@@ -29,8 +29,8 @@ public class Note {
         return userId;
     }
 
-    public void setUsernameId(int usernameId) {
-        this.usernameId = usernameId;
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
     public String getTitle() {
