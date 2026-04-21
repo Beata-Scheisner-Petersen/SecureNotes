@@ -31,7 +31,7 @@ public class NoteService {
             return true;
         }
     }
-    
+
     public void updateNote(Note note, String newTitle, String newContent) {
         if (newTitle.isBlank()) {
             note.setTitle(note.getTitle());
