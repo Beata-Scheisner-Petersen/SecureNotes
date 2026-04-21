@@ -67,6 +67,7 @@ public class mySqlNoteRepository implements INoteRepository {
             statement.executeUpdate();
 
         } catch (SQLException e) {
+            System.out.println("Failed to save note");
             ErrorLogger.log("Failed to save note", e);
         }
     }
