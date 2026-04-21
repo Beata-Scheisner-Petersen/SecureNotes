@@ -23,7 +23,7 @@ public class NoteService {
 
     public boolean createNote(int userId, String title, String content) {
         Note note = null;
-        note = new Note(0, userId, title, content, dateTimeService.FormatDateTime(), null);
+        note = new Note(userId, title, content, dateTimeService.FormatDateTime(), null);
         if (note.getContent().isBlank() || note.getCreated().isBlank()) {
             return false;
         } else {
