@@ -28,5 +28,8 @@ public class LoginController {
             loginView.success(loggedInUser.getUsername());
             return true;
         }
+
+        loginView.error();
+        return false;
     }
 }
