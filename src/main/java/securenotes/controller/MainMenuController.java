@@ -2,6 +2,7 @@ package securenotes.controller;
 
 import securenotes.view.MainMenuView;
 import java.util.Scanner;
+
 public class MainMenuController {
     private final MainMenuView view;
     private final LoginController loginController;
