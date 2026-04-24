@@ -16,8 +16,10 @@ public class MainMenuController {
     }
 
     public void start(Scanner readInput) {
-        view.show();
-        String choice = view.getChoice(readInput);
+
+        while (running){
+            view.show();
+            String choice = view.getChoice(readInput);
 
         switch (choice) {
             case "1" -> loginController.start(readInput);
