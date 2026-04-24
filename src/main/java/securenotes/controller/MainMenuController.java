@@ -21,8 +21,10 @@ public class MainMenuController {
             view.show();
             String choice = view.getChoice(readInput);
 
-        switch (choice) {
-            case "1" -> loginController.start(readInput);
+            switch (choice) {
+                case "1" -> loginHandler(readInput);
+                case "2" -> registerController.start(readInput);
+                case "3" -> running = false;
 
             default -> {
                 System.out.println("Invalid choice, try again!");
