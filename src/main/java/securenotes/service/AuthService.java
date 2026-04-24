@@ -2,7 +2,6 @@ package securenotes.service;
 
 import org.mindrot.jbcrypt.BCrypt;
 import securenotes.logging.Logger;
-import securenotes.model.AuthSession;
 import securenotes.model.User;
 import securenotes.repository.interfaces.IUserRepository;
 import securenotes.repository.mysql.mySqlBannedWordRepository;
