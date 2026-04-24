@@ -9,7 +9,6 @@ import java.util.Scanner;
 public class RegisterNewUserController {
     private final AuthService service;
     private final RegisterNewUserView register;
-    private FormatDateTimeService formatDateTimeService;
 
     public RegisterNewUserController(AuthService service, RegisterNewUserView register) {
         this.service = service;
