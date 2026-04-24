@@ -22,7 +22,7 @@ public class LoginController {
         String username = loginView.getUsernameInput(readInput);
         String password = loginView.getPasswordInput(readInput);
 
-        AuthSession session = service.login(username, password);
+        loggedInUser = service.login(username, password);
 
         if (session == null || !session.isAuthenticated()) {
             Logger.log(String.format("[%s] login failed with username: %s \n", dateTimeService.FormatDateTime(), username), exception);
