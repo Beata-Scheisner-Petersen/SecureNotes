@@ -26,10 +26,21 @@ public class MainMenuController {
                 case "2" -> registerController.start(readInput);
                 case "3" -> running = false;
 
-            default -> {
-                System.out.println("Invalid choice, try again!");
-                start(readInput);
+                default -> {
+                    System.out.println("Invalid choice, try again!");
+                    start(readInput);
+                }
             }
+        }
+
+
+    }
+
+    private void loginHandler(Scanner readInput) {
+        if (loginController.start(readInput)) {
+            //NoteController
+        } else {
+            start(readInput);
         }
     }
 }
