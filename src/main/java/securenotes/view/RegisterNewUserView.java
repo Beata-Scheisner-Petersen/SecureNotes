@@ -6,7 +6,7 @@ public class RegisterNewUserView {
     private final ConfirmationView confirmation = new ConfirmationView();
 
     public void show () {
-        System.out.println("=== Register new user ==");
+        System.out.println("=== Register new user ===");
     }
 
     public String getUsernameInput(Scanner readInput) {
