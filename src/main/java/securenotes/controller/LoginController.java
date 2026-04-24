@@ -15,8 +15,7 @@ public class LoginController {
         this.loginView = view;
     }
 
-    public void start(Scanner readInput) {
-        Exception exception = new Exception();
+    public boolean start(Scanner readInput) {
 
         loginView.show();
 
