@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class LoginController {
     private final AuthService service;
     private final LoginView loginView;
-    private FormatDateTimeService dateTimeService;
+    private User loggedInUser;
 
     public LoginController(AuthService authService, LoginView view) {
         this.service = authService;
