@@ -1,7 +1,6 @@
 package securenotes.controller;
 
-import securenotes.logging.Logger;
-import securenotes.model.AuthSession;
+import securenotes.model.User;
 import securenotes.service.AuthService;
 import securenotes.service.FormatDateTimeService;
 import securenotes.view.LoginView;
