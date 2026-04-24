@@ -19,8 +19,8 @@ public class LoginController {
 
         loginView.show();
 
-        String username = loginView.getUsernameInput(readInput);
-        String password = loginView.getPasswordInput(readInput);
+        String username = loginView.getUsernameInput(readInput).trim();
+        String password = loginView.getPasswordInput(readInput).trim();
 
         loggedInUser = service.login(username, password);
 
