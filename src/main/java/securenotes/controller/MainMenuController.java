@@ -7,6 +7,7 @@ public class MainMenuController {
     private final MainMenuView view;
     private final LoginController loginController;
     private final RegisterNewUserController registerController;
+    private  boolean running = true;
 
     public MainMenuController(MainMenuView view, LoginController loginController, RegisterNewUserController registerController) {
         this.view = view;
