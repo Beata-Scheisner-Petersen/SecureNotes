@@ -28,7 +28,7 @@ public class RegisterNewUserController {
             Logger.log(String.format("success to create user: %s", username), exception);
             register.success(username);
         } else {
-            Logger.log(String.format("[%s] fail to create user: %s", formatDateTimeService.FormatDateTime(), username), exception);
+            Logger.log(String.format("fail to create user: %s", username), exception);
             register.error(username);
         }
     }
