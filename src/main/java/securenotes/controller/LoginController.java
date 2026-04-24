@@ -3,7 +3,6 @@ package securenotes.controller;
 import securenotes.model.User;
 import securenotes.service.AuthService;
 import securenotes.view.LoginView;
-
 import java.util.Scanner;
 public class LoginController {
     private final AuthService service;
