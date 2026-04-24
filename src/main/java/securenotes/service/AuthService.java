@@ -25,9 +25,7 @@ public class AuthService {
             Logger.log("Login successfully on user:" + username, exception);
             return user;
         } else {
-
-            Logger.log("Login failed", exception);
-            System.out.println("Wrong username or password");
+            Logger.log("Login failed on user: " + user, exception);
             return null;
         }
     }
