@@ -32,4 +32,8 @@ public class LoginController {
         loginView.error();
         return false;
     }
+
+    public User getLoggedInUser() {
+        return loggedInUser;
+    }
 }
