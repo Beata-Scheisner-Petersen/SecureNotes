@@ -21,8 +21,8 @@ public class RegisterNewUserController {
         Exception exception = new Exception();
         register.show();
 
-        String username = register.getUsernameInput(readInput);
-        String password = register.getPasswordInput(readInput);
+        String username = register.getUsernameInput(readInput).trim();
+        String password = register.getPasswordInput(readInput).trim();
 
         if (service.registerNewUser(username, password)) {
             Logger.log(String.format("[%s] success to create user: %s", formatDateTimeService.FormatDateTime(), username), exception);
