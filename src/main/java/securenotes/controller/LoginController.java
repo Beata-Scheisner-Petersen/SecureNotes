@@ -2,7 +2,6 @@ package securenotes.controller;
 
 import securenotes.model.User;
 import securenotes.service.AuthService;
-import securenotes.service.FormatDateTimeService;
 import securenotes.view.LoginView;
 
 import java.util.Scanner;
