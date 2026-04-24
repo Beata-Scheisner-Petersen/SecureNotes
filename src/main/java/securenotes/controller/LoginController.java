@@ -24,13 +24,9 @@ public class LoginController {
 
         loggedInUser = service.login(username, password);
 
-        if (session == null || !session.isAuthenticated()) {
-            Logger.log(String.format("[%s] login failed with username: %s \n", dateTimeService.FormatDateTime(), username), exception);
-            loginView.error(username);
-            start(readInput);
-        } else {
-            Logger.log(String.format("[%s] login success with username: %s \n", dateTimeService.FormatDateTime(), username), exception);
-            loginView.success(username);
+        if (loggedInUser != null) {
+            loginView.success(loggedInUser.getUsername());
+            return true;
         }
     }
 }
