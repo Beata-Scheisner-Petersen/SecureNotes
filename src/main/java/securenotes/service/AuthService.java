@@ -19,7 +19,7 @@ public class AuthService {
         this.userRepository = userRepository;
     }
 
-    public AuthSession login(String username, String password) {
+    public User login(String username, String password) {
         User user = userRepository.findByUsername(username);
         if (user == null) {
             return null;
