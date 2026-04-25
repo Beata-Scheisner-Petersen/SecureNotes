@@ -41,7 +41,6 @@ public class AuthService {
             System.out.println("User already exist");
             return false;
         } else if ((username.length() < 5 || username.length() > 15 || !isValidUsername(username))) {
-            System.out.println("Error: invalid choice of username");
             return false;
         } else if ((password.length() < 8 || password.length() > 15) || !isValidPassword(password)) {
             System.out.println("Error: invalid choice of password");
