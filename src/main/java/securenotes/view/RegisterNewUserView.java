@@ -1,6 +1,7 @@
 package securenotes.view;
 
 import java.util.Scanner;
+
 public class RegisterNewUserView {
     private final GetUsernameAndPasswordView credentials = new GetUsernameAndPasswordView();
     private final ConfirmationView confirmation = new ConfirmationView();
