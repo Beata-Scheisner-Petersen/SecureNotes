@@ -1,7 +1,6 @@
 package securenotes.repository.interfaces;
 
 import securenotes.model.Note;
-
 import java.util.List;
 public interface INoteRepository {
     List<Note> NotesList(int userId);
