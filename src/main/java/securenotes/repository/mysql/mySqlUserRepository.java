@@ -27,7 +27,7 @@ public class mySqlUserRepository implements IUserRepository {
                         result.getString("role"));
             }
         } catch (SQLException e) {
-            Logger.log("failed to find user by id", e);
+            Logger.log("failed to find user by username", e);
         }
         return null;
     }
