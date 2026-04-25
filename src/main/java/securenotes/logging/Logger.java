@@ -27,14 +27,4 @@ public class Logger {
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
         return dateTimeFormatter.format(localDateTime);
     }
-
-    private void createErrorTextFileIfNotExist(Path path) {
-        try {
-            if (!Files.exists(path)) {
-                Files.createFile(path);
-            }
-        } catch (IOException e) {
-            System.out.println("Error: File couldn't creates!");
-        }
-    }
 }
