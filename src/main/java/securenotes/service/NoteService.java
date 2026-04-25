@@ -22,7 +22,7 @@ public class NoteService {
 
     public boolean createNote(int userId, String title, String content) {
         Note note = null;
-        note = new Note(userId, title, content, dateTimeService.FormatDateTime(), null);
+        note = new Note(userId, title, content, Logger.getFormatedDateTime(), null);
         if (note.getContent().isBlank() || note.getCreated().isBlank()) {
             return false;
         } else {
@@ -44,7 +44,7 @@ public class NoteService {
             note.setContent(newContent);
         }
 
-        note.setUpdated(dateTimeService.FormatDateTime());
+        note.setUpdated(Logger.getFormatedDateTime());
 
         try {
             noteRepository.update(note);
