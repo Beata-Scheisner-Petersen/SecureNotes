@@ -63,7 +63,7 @@ public class mySqlUserRepository implements IUserRepository {
             statement.executeUpdate();
         } catch (SQLException e) {
             System.out.println("Error: sql injection failed");
-            Logger.log("failed to save user", e);
+            Logger.log("failed to save user " + user.getUsername(), e);
         }
     }
     private User mapUser(ResultSet result) throws SQLException {
