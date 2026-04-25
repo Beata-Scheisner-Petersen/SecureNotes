@@ -8,7 +8,7 @@ public class Logger {
     
     private static final String LOG_FILE = "src/main/resources/logs/error.log";
 
-    public static synchronized void log(String message, Exception e) {
+    public static void log(String message, Exception e) {
 
         try(FileWriter writer = new FileWriter(LOG_FILE, true)) {
             writer.write("[" + getFormatedDateTime() + "] ");
