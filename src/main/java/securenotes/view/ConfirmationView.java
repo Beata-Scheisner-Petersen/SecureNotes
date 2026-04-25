@@ -2,15 +2,15 @@ package securenotes.view;
 
 public class ConfirmationView {
 
-    public String showError(String message) {
-        return String.format("""
+    public void showError(String message) {
+        System.out.printf("""
                 Error: %s
                 -------------------------------------------------------------------
                 """, message);
     }
 
-    public String showSuccess(String message) {
-        return String.format("""
+    public void showSuccess(String message) {
+        System.out.printf("""
                 Success: %s
                 -------------------------------------------------------------------
                 """, message);
