@@ -18,10 +18,7 @@ public class LoginView {
     }
 
     public void success(String username) {
-        confirmation.showSuccess(String.format("""
-                        You success to login with username: %s
-                        ------------------------------------------------------------------
-                        """, username));
+        confirmation.showSuccess(String.format("You success to login with username: %s", username));
     }
 
     public void error(String username) {
