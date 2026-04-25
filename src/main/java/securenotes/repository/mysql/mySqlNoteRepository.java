@@ -6,6 +6,7 @@ import securenotes.repository.interfaces.INoteRepository;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+
 public class mySqlNoteRepository implements INoteRepository {
     private List<Note> notes = new ArrayList<>();
     @Override
