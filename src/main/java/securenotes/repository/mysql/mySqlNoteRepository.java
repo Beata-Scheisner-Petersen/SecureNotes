@@ -105,7 +105,6 @@ public class mySqlNoteRepository implements INoteRepository {
             statement.executeUpdate();
 
         } catch (SQLException e) {
-            System.out.println("Failed to delete note");
             Logger.log("Failed to delete note", e);
         }
     }
