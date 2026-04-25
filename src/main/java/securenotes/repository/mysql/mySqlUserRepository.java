@@ -54,8 +54,6 @@ public class mySqlUserRepository implements IUserRepository {
         //noinspection SqlResolve
         String insert = "INSERT INTO users (username, password) VALUES (?, ?)";
 
-        String hashedPassword = BCrypt.hashpw(user.getPassword(), BCrypt.gensalt());
-
         try (Connection connection = mySqlConnectionFactory.getSqlConnection();
              PreparedStatement statement = connection.prepareStatement(insert)) {
             statement.setString(1, user.getUsername());
