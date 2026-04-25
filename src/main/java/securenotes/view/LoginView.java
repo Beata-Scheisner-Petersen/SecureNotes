@@ -21,10 +21,7 @@ public class LoginView {
         confirmation.showSuccess(String.format("You success to login with username: %s", username));
     }
 
-    public void error(String username) {
-        confirmation.showError(String.format("""
-                        You failed to login with username: %s
-                        ------------------------------------------------------------------
-                        """, username));
+    public void error() {
+        confirmation.showError("You failed to login: wrong username or password!");
     }
 }
