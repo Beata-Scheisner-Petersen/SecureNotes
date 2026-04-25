@@ -1,6 +1,5 @@
 package securenotes.repository.mysql;
 
-import org.mindrot.jbcrypt.BCrypt;
 import securenotes.logging.Logger;
 import securenotes.model.User;
 import securenotes.repository.interfaces.IUserRepository;
