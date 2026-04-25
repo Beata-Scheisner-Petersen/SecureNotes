@@ -8,7 +8,7 @@ public class NoteListView {
     public void showListOfNotes(List<Note> listOfNotes) {
         System.out.println("=== Notes ===");
         if (listOfNotes.isEmpty()) {
-            System.out.println("Inga anteckningar ännu. \n" +
+            System.out.println("No notes. \n" +
                     "--------------------------------------------------------------------");
         }
 
