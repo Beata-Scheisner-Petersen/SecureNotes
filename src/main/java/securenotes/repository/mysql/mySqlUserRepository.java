@@ -66,11 +66,4 @@ public class mySqlUserRepository implements IUserRepository {
             Logger.log("failed to save user " + user.getUsername(), e);
         }
     }
-    private User mapUser(ResultSet result) throws SQLException {
-        return new User(
-                result.getInt("id"),
-                result.getString("username"),
-                result.getString("password")
-        );
-    }
 }
