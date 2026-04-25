@@ -13,7 +13,7 @@ public class mySqlUserRepository implements IUserRepository {
     @Override
     public User findByUsername(String username) {
         //noinspection SqlResolve
-        String sql = "SELECT id, username, password FROM users WHERE username = ?";
+        String sql = "SELECT * FROM users WHERE username = ?";
 
         try(Connection connection = mySqlConnectionFactory.getSqlConnection();
             PreparedStatement statement = connection.prepareStatement(sql)) {
