@@ -7,7 +7,6 @@ import java.util.List;
 
 public class NoteService {
     private final INoteRepository noteRepository;
-    private FormatDateTimeService dateTimeService;
 
     public NoteService(INoteRepository noteRepository) {
         this.noteRepository = noteRepository;
