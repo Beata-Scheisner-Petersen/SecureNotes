@@ -22,7 +22,7 @@ public class Logger {
             System.err.println("Failed to write to log file: " + IO_Ex.getMessage());
         }
     }
-    private static String getFormatedDateTime() {
+    public static String getFormatedDateTime() {
         LocalDateTime localDateTime = LocalDateTime.now();
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
         return dateTimeFormatter.format(localDateTime);
