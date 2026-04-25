@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
 public class mySqlBannedWordRepository implements IBannedWordRepository {
     private final List<String> bannedWords = new ArrayList<>();
     @Override
