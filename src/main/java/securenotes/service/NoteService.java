@@ -31,7 +31,12 @@ public class NoteService {
         }
     }
 
-    public void updateNote(Note note, String newTitle, String newContent) {
+    public boolean updateNote(int id, String newTitle, String newContent) {
+        Note note = noteRepository.findById(id);
+        if (note == null) {
+            return false;
+        }
+
         if (newTitle.isBlank()) {
             note.setTitle(note.getTitle());
         } else {
@@ -46,12 +51,11 @@ public class NoteService {
 
         note.setUpdated(Logger.getFormatedDateTime());
 
-        try {
-            noteRepository.update(note);
-        } catch (Exception e) {
-            System.out.println("Failed to update Note");
-            Logger.log("failed to update note", e);
+        if (note.getUpdated() == null || note.getUpdated().isBlank()) {
+            return false;
         }
+        noteRepository.update(note);
+        return true;
     }
 
     public void deleteNote(int noteId) {
