@@ -108,7 +108,6 @@ public class mySqlNoteRepository implements INoteRepository {
             System.out.println("Failed to delete note");
             Logger.log("Failed to delete note", e);
         }
-
     }
 
     private Note map (ResultSet result) throws SQLException {
