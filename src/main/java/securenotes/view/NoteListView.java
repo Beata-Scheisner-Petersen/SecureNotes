@@ -18,7 +18,6 @@ public class NoteListView {
     }
 
     public String showMenu(Scanner readInput) {
-        readInput.nextLine();
         System.out.println("""
                 1. Create new note
                 2. Edit note
