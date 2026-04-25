@@ -3,7 +3,6 @@ package securenotes.repository.mysql;
 import securenotes.logging.Logger;
 import securenotes.model.Note;
 import securenotes.repository.interfaces.INoteRepository;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
