@@ -10,7 +10,7 @@ public class LoginView {
     }
 
     public String getUsernameInput(Scanner readInput) {
-        return credentials.askForUsername(readInput);
+        return credentials.askForUsername(readInput).trim();
     }
 
     public String getPasswordInput(Scanner readInput) {
