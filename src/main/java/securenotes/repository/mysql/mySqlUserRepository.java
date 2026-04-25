@@ -59,7 +59,7 @@ public class mySqlUserRepository implements IUserRepository {
         try (Connection connection = mySqlConnectionFactory.getSqlConnection();
              PreparedStatement statement = connection.prepareStatement(insert)) {
             statement.setString(1, user.getUsername());
-            statement.setString(2, hashedPassword);
+            statement.setString(2, user.getPassword());
             statement.executeUpdate();
         } catch (SQLException e) {
             System.out.println("Error: sql injection failed");
