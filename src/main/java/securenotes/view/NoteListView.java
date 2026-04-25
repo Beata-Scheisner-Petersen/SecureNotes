@@ -5,7 +5,7 @@ import securenotes.model.Note;
 import java.util.List;
 import java.util.Scanner;
 public class NoteListView {
-    public void showNotes (List<Note> listOfNotes, Scanner readInput) {
+    public void showListOfNotes(List<Note> listOfNotes, Scanner readInput) {
         System.out.println("=== Notes ===");
         if (listOfNotes.isEmpty()) {
             System.out.println("Inga anteckningar ännu. \n" +
