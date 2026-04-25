@@ -21,8 +21,13 @@ public class AuthService {
 
     public User login(String username, String password) {
         User user = userRepository.findByUsername(username);
-        if (user != null && user.getUsername().equals(username) && BCrypt.checkpw(password, user.getPassword())) {
-            Logger.log("Login successfully on user:" + username, exception);
+
+        if (user == null) {
+            Logger.log("Login failed on user:" + username, exception);
+            return null;
+        }
+
+        if (BCrypt.checkpw(password, user.getPassword())) {
             return user;
         } else {
             Logger.log("Login failed on user: " + user, exception);
