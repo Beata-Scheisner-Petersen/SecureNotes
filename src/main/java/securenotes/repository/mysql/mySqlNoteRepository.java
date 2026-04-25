@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class mySqlNoteRepository implements INoteRepository {
-    private List<Note> notes = new ArrayList<>();
+    private final List<Note> notes = new ArrayList<>();
     @Override
     public List<Note> NotesList(int userId) {
         //noinspection SqlResolve
@@ -24,7 +24,6 @@ public class mySqlNoteRepository implements INoteRepository {
             }
             return notes;
         } catch (SQLException e) {
-            System.out.println("Failed to fetch notes for user");
             Logger.log("Failed to fetch notes for user", e);
         }
         return null;
@@ -44,7 +43,6 @@ public class mySqlNoteRepository implements INoteRepository {
                 return map(result);
             }
         } catch (SQLException e) {
-            System.out.println("Failed to fetch notes for user");
             Logger.log("Failed to fetch notes for user", e);
         }
         return null;
@@ -67,7 +65,6 @@ public class mySqlNoteRepository implements INoteRepository {
             statement.executeUpdate();
 
         } catch (SQLException e) {
-            System.out.println("Failed to save note");
             Logger.log("Failed to save note", e);
         }
     }
@@ -88,8 +85,7 @@ public class mySqlNoteRepository implements INoteRepository {
             statement.executeUpdate();
 
         } catch (SQLException e) {
-            System.out.println("Failed to update note");
-            Logger.log("Failed to update note", e);
+            Logger.log("failed to update note", e);
         }
     }
 
