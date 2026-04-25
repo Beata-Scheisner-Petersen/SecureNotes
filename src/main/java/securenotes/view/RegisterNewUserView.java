@@ -14,7 +14,7 @@ public class RegisterNewUserView {
     }
 
     public String getPasswordInput(Scanner readInput) {
-        return credentials.askForPassword(readInput);
+        return credentials.askForPassword(readInput).trim();
     }
 
     public void success(String username) {
