@@ -11,25 +11,6 @@ import java.sql.SQLException;
 public class mySqlUserRepository implements IUserRepository {
 
     @Override
-    public User findById(int id) {
-        //noinspection SqlResolve
-        String sql = "SELECT id, username, password FROM users WHERE id = ?";
-
-        try(Connection connection = mySqlConnectionFactory.getSqlConnection();
-            PreparedStatement statement = connection.prepareStatement(sql)) {
-            statement.setInt(1, id);
-            ResultSet result = statement.executeQuery();
-
-            if (result.next()) {
-                return mapUser(result);
-            }
-        } catch (SQLException e) {
-            Logger.log("failed to find user by id", e);
-        }
-        return null;
-    }
-
-    @Override
     public User findByUsername(String username) {
         //noinspection SqlResolve
         String sql = "SELECT id, username, password FROM users WHERE username = ?";
