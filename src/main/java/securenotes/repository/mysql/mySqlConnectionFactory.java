@@ -4,6 +4,7 @@ import securenotes.logging.Logger;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+
 public class mySqlConnectionFactory {
     private static final String URL = System.getenv("DB_URL");
     private static final String USER = System.getenv("DB_USER");
