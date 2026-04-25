@@ -35,12 +35,6 @@ public class AuthService {
         }
     }
 
-    public void logout (AuthSession session) {
-        if (session != null) {
-            session.logout();
-        }
-    }
-
     public boolean registerNewUser (String username, String password) {
         if (userRepository.findByUsername(username) != null) {
             Logger.log("Register new user failed. User already exist", exception);
