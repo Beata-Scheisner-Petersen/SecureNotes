@@ -1,6 +1,7 @@
 package securenotes.view;
 
 import java.util.Scanner;
+
 public class MainMenuView {
 
     public void show() {
