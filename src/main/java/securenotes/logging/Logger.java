@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 public class Logger {
-    
     private static final String LOG_FILE = "src/main/resources/logs/error.log";
 
     public static void log(String message, Exception e) {
