@@ -3,7 +3,6 @@ package securenotes.repository.mysql;
 import securenotes.logging.Logger;
 import securenotes.model.User;
 import securenotes.repository.interfaces.IUserRepository;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
