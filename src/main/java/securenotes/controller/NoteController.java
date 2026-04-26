@@ -31,6 +31,11 @@ public class NoteController {
 
             switch (choice) {
                 case "1" -> createNote(readInput);
+                case "2" -> editNote(readInput);
+                case "3" -> deleteNote(readInput);
+                case "4" -> {return;}
+
+                default -> System.out.println("Invalid choice");
             }
         }
     }
