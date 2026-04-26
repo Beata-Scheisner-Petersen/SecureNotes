@@ -72,7 +72,7 @@ public class mySqlNoteRepository implements INoteRepository {
     @Override
     public void update(Note note) {
         //noinspection SqlResolve
-        String sql = "UPDATE notes SET title = ?, content = ?, updated_at = ? WHERE id = ?";
+        String sql = "UPDATE notes SET title = ?, content = ?, updatedAt = ? WHERE id = ?";
 
         try (Connection conn = mySqlConnectionFactory.getSqlConnection();
              PreparedStatement statement = conn.prepareStatement(sql)) {
