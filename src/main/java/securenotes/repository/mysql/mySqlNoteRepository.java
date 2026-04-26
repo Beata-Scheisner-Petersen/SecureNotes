@@ -20,6 +20,8 @@ public class mySqlNoteRepository implements INoteRepository {
             statement.setInt(1, userId);
             ResultSet result = statement.executeQuery();
 
+            notes.clear();
+
             while (result.next()) {
                 notes.add(map(result));
             }
