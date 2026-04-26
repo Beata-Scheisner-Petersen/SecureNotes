@@ -39,7 +39,7 @@ public class App {
         // så vi skickar in noteService + views senare
 
         MainMenuController mainMenuController =
-                new MainMenuController(mainMenuView, loginController, registerController/*, noteService, noteListView, noteEditorView*/);
+                new MainMenuController(mainMenuView, loginController, registerController, noteService, noteListView, noteEditorView);
 
         // --- Starta programmet ---
         mainMenuController.start(readInput);
