@@ -1,6 +1,6 @@
 package securenotes.view;
 
-public class ConfirmationView {
+public class Confirmation {
 
     public void showError(String message) {
         System.out.printf("""
