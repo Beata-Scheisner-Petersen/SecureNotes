@@ -21,6 +21,7 @@ public class NoteListView {
 
     public String showMenu(Scanner readInput) {
         System.out.println("""
+                === Note Menu ===
                 1. Create new note
                 2. Edit note
                 3. Delete note
