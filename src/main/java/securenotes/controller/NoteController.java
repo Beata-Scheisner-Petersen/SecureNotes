@@ -50,7 +50,23 @@ public class NoteController {
     }
 
     private void editNote(Scanner readInput) {
-        int id = listView.askForNoteById(readInput);
+        int id = listView.askForNoteId(readInput);
         readInput.nextLine();
+
+        if (service.updateNote(id, editorView.askTitle(readInput), editorView.askContent(readInput))) {
+            confirmation.showSuccess("Note updated");
+        } else {
+            confirmation.showError("failed to update note");
+        }
+    }
+
+    private void deleteNote(Scanner readInput) {
+        int id = listView.askForNoteId(readInput);
+        readInput.nextLine();
+        if (service.deleteNote(id)) {
+            confirmation.showSuccess("Note deleted");
+        } else {
+            confirmation.showError("Failed to delete note");
+        }
     }
 }
