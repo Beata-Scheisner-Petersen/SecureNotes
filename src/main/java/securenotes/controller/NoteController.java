@@ -6,7 +6,6 @@ import securenotes.service.NoteService;
 import securenotes.view.Confirmation;
 import securenotes.view.NoteEditorView;
 import securenotes.view.NoteListView;
-
 import java.util.List;
 import java.util.Scanner;
 public class NoteController {
