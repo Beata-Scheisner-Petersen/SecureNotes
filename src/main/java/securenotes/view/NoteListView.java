@@ -3,6 +3,7 @@ package securenotes.view;
 import securenotes.model.Note;
 import java.util.List;
 import java.util.Scanner;
+
 public class NoteListView {
     
     public void showListOfNotes(List<Note> listOfNotes) {
