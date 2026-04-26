@@ -30,7 +30,7 @@ public class NoteListView {
     }
 
     public String showMenu(Scanner readInput) {
-        System.out.println("""
+        System.out.print("""
                 === Note Menu ===
                 1. Create new note
                 2. Edit note
