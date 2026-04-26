@@ -16,10 +16,6 @@ public class NoteService {
         return noteRepository.NotesList(userId);
     }
 
-    public Note getNoteByID(int id) {
-        return noteRepository.findById(id);
-    }
-
     public boolean createNote(int userId, String title, String content) {
         Note note = null;
         note = new Note(userId, title, content, Logger.getFormatedDateTime(), null);
