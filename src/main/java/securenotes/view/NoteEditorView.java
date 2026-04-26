@@ -4,12 +4,12 @@ import java.util.Scanner;
 
 public class NoteEditorView {
     public String askTitle(Scanner readInput) {
-        System.out.print("Titel: ");
+        System.out.print("Title: ");
         return readInput.nextLine();
     }
 
     public String askContent(Scanner readInput) {
-        System.out.print("Innehåll: ");
+        System.out.print("Content: ");
         return readInput.nextLine();
     }
 }
