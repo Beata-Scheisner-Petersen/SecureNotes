@@ -27,8 +27,8 @@ public class NoteService {
         }
     }
 
-    public boolean updateNote(int id, String newTitle, String newContent) {
-        Note note = noteRepository.findById(id);
+    public boolean updateNote(int noteId, String newTitle, String newContent) {
+        Note note = noteRepository.findById(noteId);
         if (note == null) {
             return false;
         }
