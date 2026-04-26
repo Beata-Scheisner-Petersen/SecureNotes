@@ -108,7 +108,7 @@ public class mySqlNoteRepository implements INoteRepository {
     private Note map (ResultSet result) throws SQLException {
         return new Note(
                 result.getInt("id"),
-                result.getInt("user_id"),
+                result.getInt("users_id"),
                 result.getString("title"),
                 result.getString("content"),
                 result.getString("createAt"),
