@@ -1,6 +1,10 @@
 package securenotes.controller;
 
+import securenotes.model.User;
+import securenotes.service.NoteService;
 import securenotes.view.MainMenuView;
+import securenotes.view.NoteEditorView;
+import securenotes.view.NoteListView;
 import java.util.Scanner;
 
 public class MainMenuController {
