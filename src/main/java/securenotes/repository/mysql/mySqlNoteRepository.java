@@ -51,7 +51,7 @@ public class mySqlNoteRepository implements INoteRepository {
     @Override
     public void save(Note note) {
         //noinspection SqlResolve
-        String sql = "INSERT INTO notes (user_id, title, content, created_at, updated_at) VALUES (?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO notes (users_id, title, content, createAt) VALUES (?, ?, ?, ?)";
 
         try (Connection conn = mySqlConnectionFactory.getSqlConnection();
              PreparedStatement statement = conn.prepareStatement(sql)) {
@@ -59,8 +59,7 @@ public class mySqlNoteRepository implements INoteRepository {
             statement.setInt(1, note.getUserId());
             statement.setString(2, note.getTitle());
             statement.setString(3, note.getContent());
-            statement.setTimestamp(4, Timestamp.valueOf(note.getCreated()));
-            statement.setTimestamp(5, Timestamp.valueOf(note.getUpdated()));
+            statement.setString(4, note.getCreated());
 
             statement.executeUpdate();
 
