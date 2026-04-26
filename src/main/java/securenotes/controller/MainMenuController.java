@@ -52,6 +52,7 @@ public class MainMenuController {
 
         if (loggedInUser != null) {
             NoteController controller = new NoteController(noteService, listView, noteEditorView, loggedInUser);
+            controller.showNotes(readInput);
         }
         start(readInput);
     }
