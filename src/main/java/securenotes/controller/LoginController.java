@@ -26,9 +26,9 @@ public class LoginController {
 
         if (loggedInUser != null) {
             loginView.success(loggedInUser.getUsername());
+        } else {
+            loginView.error();
         }
-
-        loginView.error();
     }
 
     public User getLoggedInUser() {
