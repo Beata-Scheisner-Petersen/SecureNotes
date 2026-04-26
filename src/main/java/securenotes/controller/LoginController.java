@@ -15,7 +15,7 @@ public class LoginController {
         this.loginView = view;
     }
 
-    public boolean start(Scanner readInput) {
+    public void start(Scanner readInput) {
 
         loginView.show();
 
