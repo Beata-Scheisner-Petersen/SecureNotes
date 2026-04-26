@@ -28,7 +28,7 @@ public class NoteListView {
         return readInput.nextLine();
     }
 
-    public int askForNoteById(Scanner readInput) {
+    public int askForNoteId(Scanner readInput) {
         System.out.print("Enter id-number for the note you want to see: ");
         return Integer.parseInt(readInput.nextLine());
     }
