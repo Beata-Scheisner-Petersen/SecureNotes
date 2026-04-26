@@ -79,7 +79,7 @@ public class mySqlNoteRepository implements INoteRepository {
 
             statement.setString(1, note.getTitle());
             statement.setString(2, note.getContent());
-            statement.setTimestamp(3, Timestamp.valueOf(note.getUpdated()));
+            statement.setString(3, note.getUpdated());
             statement.setInt(4, note.getId());
 
             statement.executeUpdate();
