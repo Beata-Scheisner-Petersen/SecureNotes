@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class NoteListView {
-    
+
     public void showListOfNotes(List<Note> listOfNotes) {
         System.out.println("=== Notes ===");
         if (listOfNotes.isEmpty()) {
