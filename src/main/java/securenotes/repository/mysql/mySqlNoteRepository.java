@@ -25,7 +25,7 @@ public class mySqlNoteRepository implements INoteRepository {
             }
             return notes;
         } catch (SQLException e) {
-            Logger.log("Failed to fetch notes for user", e);
+            Logger.log("Failed to fetch notes for user by users_id", e);
         }
         return null;
     }
@@ -44,7 +44,7 @@ public class mySqlNoteRepository implements INoteRepository {
                 return map(result);
             }
         } catch (SQLException e) {
-            Logger.log("Failed to fetch notes for user", e);
+            Logger.log("Failed to fetch notes for users by id", e);
         }
         return null;
     }
