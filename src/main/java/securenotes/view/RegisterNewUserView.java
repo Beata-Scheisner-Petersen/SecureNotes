@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class RegisterNewUserView {
     private final GetUsernameAndPasswordView credentials = new GetUsernameAndPasswordView();
-    private final ConfirmationView confirmation = new ConfirmationView();
+    private final Confirmation confirmation = new Confirmation();
 
     public void show () {
         System.out.println("=== Register new user ===");
