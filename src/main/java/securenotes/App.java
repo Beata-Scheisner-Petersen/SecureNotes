@@ -28,8 +28,8 @@ public class App {
         LoginView loginView = new LoginView();
         RegisterNewUserView registerView = new RegisterNewUserView();
         MainMenuView mainMenuView = new MainMenuView();
-//        NoteListView noteListView = new NoteListView();
-//        NoteEditorView noteEditorView = new NoteEditorView();
+        NoteListView noteListView = new NoteListView();
+        NoteEditorView noteEditorView = new NoteEditorView();
 
         // --- Controllers ---
         LoginController loginController = new LoginController(authService, loginView);
