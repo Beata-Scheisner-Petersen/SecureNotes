@@ -43,9 +43,9 @@ public class NoteController {
     private void createNote(Scanner readInput) {
 
         if (service.createNote(user.getId(), editorView.askTitle(readInput), editorView.askContent(readInput))) {
-            new ConfirmationView().showSuccess("Note saved");
+            confirmation.showSuccess("Note saved");
         } else {
-            new ConfirmationView().showError("failed to save note");
+            confirmation.showError("failed to save note");
         }
     }
 
