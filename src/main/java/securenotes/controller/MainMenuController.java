@@ -17,10 +17,14 @@ public class MainMenuController {
 
     private  boolean running = true;
 
-    public MainMenuController(MainMenuView view, LoginController loginController, RegisterNewUserController registerController) {
+    public MainMenuController(MainMenuView view, LoginController loginController, RegisterNewUserController registerController,
+                              NoteService noteService, NoteListView noteListView, NoteEditorView noteEditorView ) {
         this.view = view;
         this.loginController = loginController;
         this.registerController = registerController;
+        this.noteService = noteService;
+        this.listView = noteListView;
+        this.noteEditorView = noteEditorView;
     }
 
     public void start(Scanner readInput) {
