@@ -44,8 +44,6 @@ public class MainMenuController {
                 }
             }
         }
-
-
     }
 
     private void loginHandler(Scanner readInput) {
