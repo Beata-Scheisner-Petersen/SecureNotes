@@ -1,6 +1,7 @@
 package securenotes.view;
 
 import java.util.Scanner;
+
 public class NoteEditorView {
     public String askTitle(Scanner readInput) {
         System.out.print("Titel: ");
