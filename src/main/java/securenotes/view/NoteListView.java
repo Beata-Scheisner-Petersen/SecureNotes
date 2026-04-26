@@ -13,8 +13,9 @@ public class NoteListView {
                     "--------------------------------------------------------------------");
         } else {
             for (Note note : listOfNotes) {
-                System.out.printf("%d. %s", note.getId(), note.getTitle());
+                System.out.printf("%d. %s \n", note.getId(), note.getTitle());
             }
+            System.out.println("---------------------------------------------------------");
         }
     }
 
