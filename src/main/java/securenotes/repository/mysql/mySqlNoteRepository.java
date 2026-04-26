@@ -10,7 +10,7 @@ import java.util.List;
 public class mySqlNoteRepository implements INoteRepository {
     private final List<Note> notes = new ArrayList<>();
     @Override
-    public List<Note> NotesList(int userId) {
+    public List<Note> notesList(int userId) {
         //noinspection SqlResolve
         String sql = "SELECT * FROM notes WHERE id = ?";
 
