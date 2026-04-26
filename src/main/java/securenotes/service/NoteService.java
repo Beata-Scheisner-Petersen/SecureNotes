@@ -54,12 +54,9 @@ public class NoteService {
         return true;
     }
 
-    public void deleteNote(int noteId) {
-        try {
-            noteRepository.delete(noteId);
-        } catch (Exception e) {
-            System.out.println("failed to delete note");
-            Logger.log("Failed to delete note", e);
-        }
+    public boolean deleteNote(int noteId) {
+        noteRepository.delete(noteId);
+
+        return noteRepository.findById(noteId) == null;
     }
 }
