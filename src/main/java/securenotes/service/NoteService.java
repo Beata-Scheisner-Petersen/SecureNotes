@@ -13,7 +13,7 @@ public class NoteService {
     }
 
     public List<Note> getNotesForUser(int userId) {
-        return noteRepository.NotesList(userId);
+        return noteRepository.notesList(userId);
     }
 
     public boolean createNote(int userId, String title, String content) {
