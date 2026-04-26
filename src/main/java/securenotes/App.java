@@ -9,9 +9,7 @@ import securenotes.repository.mysql.mySqlNoteRepository;
 import securenotes.repository.mysql.mySqlUserRepository;
 import securenotes.service.AuthService;
 import securenotes.service.NoteService;
-import securenotes.view.LoginView;
-import securenotes.view.MainMenuView;
-import securenotes.view.RegisterNewUserView;
+import securenotes.view.*;
 import java.util.Scanner;
 
 public class App {
