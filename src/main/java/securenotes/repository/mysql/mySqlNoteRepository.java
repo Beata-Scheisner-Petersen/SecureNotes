@@ -13,7 +13,7 @@ public class mySqlNoteRepository implements INoteRepository {
     @Override
     public List<Note> notesList(int userId) {
         //noinspection SqlResolve
-        String sql = "SELECT * FROM notes WHERE id = ?";
+        String sql = "SELECT * FROM notes WHERE users_id = ?";
 
         try (Connection connection = mySqlConnectionFactory.getSqlConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
