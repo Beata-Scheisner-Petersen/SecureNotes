@@ -49,10 +49,12 @@ public class MainMenuController {
     }
 
     private void loginHandler(Scanner readInput) {
-        if (loginController.start(readInput)) {
-            //NoteController
-        } else {
-            start(readInput);
+        loginController.start(readInput);
+        User loggedInUser = loginController.getLoggedInUser();
+
+        if (loggedInUser != null) {
+            NoteController controller = new NoteController(noteService, listView, noteEditorView, loggedInUser);
         }
+        start(readInput);
     }
 }
