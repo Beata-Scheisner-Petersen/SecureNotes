@@ -11,6 +11,10 @@ public class MainMenuController {
     private final MainMenuView view;
     private final LoginController loginController;
     private final RegisterNewUserController registerController;
+    private final NoteService noteService;
+    private final NoteListView listView;
+    private final NoteEditorView noteEditorView;
+
     private  boolean running = true;
 
     public MainMenuController(MainMenuView view, LoginController loginController, RegisterNewUserController registerController) {
