@@ -3,7 +3,7 @@ package securenotes.controller;
 import securenotes.model.Note;
 import securenotes.model.User;
 import securenotes.service.NoteService;
-import securenotes.view.confirmation;
+import securenotes.view.Confirmation;
 import securenotes.view.NoteEditorView;
 import securenotes.view.NoteListView;
 
