@@ -14,6 +14,7 @@ public class NoteController {
     private final NoteListView listView;
     private final NoteEditorView editorView;
     private final User user;
+    private final Confirmation confirmation = new Confirmation();
 
     public NoteController(NoteService service, NoteListView listView, NoteEditorView editorView, User user) {
         this.service = service;
