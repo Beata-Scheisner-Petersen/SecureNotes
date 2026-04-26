@@ -11,10 +11,10 @@ public class NoteListView {
         if (listOfNotes == null || listOfNotes.isEmpty()) {
             System.out.println("No notes. \n" +
                     "--------------------------------------------------------------------");
-        }
-
-        for (Note note : listOfNotes) {
-            System.out.printf("%d. %s", note.getId(), note.getTitle());
+        } else {
+            for (Note note : listOfNotes) {
+                System.out.printf("%d. %s", note.getId(), note.getTitle());
+            }
         }
     }
 
