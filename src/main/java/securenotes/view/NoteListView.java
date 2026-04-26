@@ -13,7 +13,17 @@ public class NoteListView {
                     "--------------------------------------------------------------------");
         } else {
             for (Note note : listOfNotes) {
-                System.out.printf("%d. %s \n", note.getId(), note.getTitle());
+                if (note.getUpdated() != null) {
+                    System.out.printf("""
+                        %d. [%s] %s
+                        %s
+                        """, note.getId(), note.getUpdated(), note.getTitle(), note.getContent());
+                } else {
+                    System.out.printf("""
+                        %d. [%s] %s
+                        %s
+                        """, note.getId(), note.getCreated(), note.getTitle(), note.getContent());
+                }
             }
             System.out.println("---------------------------------------------------------");
         }
