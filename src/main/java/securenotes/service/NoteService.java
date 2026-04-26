@@ -17,9 +17,9 @@ public class NoteService {
     }
 
     public boolean createNote(int userId, String title, String content) {
-        Note note = null;
-        note = new Note(userId, title, content, Logger.getFormatedDateTime(), null);
-        if (note.getContent().isBlank() || note.getCreated().isBlank()) {
+        Note note = new Note(userId, title, content, Logger.getFormatedDateTime(), null);
+
+        if ((note == null) || note.getContent().isBlank() || note.getCreated().isBlank() || userId < 1) {
             return false;
         } else {
             noteRepository.save(note);
