@@ -55,7 +55,11 @@ public class AuthService {
         Pattern specialCharacters = Pattern.compile("[^a-z0-9_]", Pattern.CASE_INSENSITIVE);
         Matcher matcherForUsername = specialCharacters.matcher(username);
 
-        if (username.isBlank() || matcherForUsername.find() || isBannedWord(username)) {
+        if (username.isBlank() || matcherForUsername.find()) {
+            Logger.log("username is empty or have special character", exception);
+            return false;
+        } else if (isBannedWord(username)) {
+            Logger.log("username contains banned word", exception);
             return false;
         }
 
