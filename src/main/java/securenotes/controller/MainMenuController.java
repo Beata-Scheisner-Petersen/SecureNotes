@@ -27,6 +27,7 @@ public class MainMenuController {
         this.noteService = noteService;
         this.listView = noteListView;
         this.noteEditorView = noteEditorView;
+        this.changePasswordView = changePasswordView;
     }
 
     public void start(Scanner readInput) {
