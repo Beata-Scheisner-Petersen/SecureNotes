@@ -8,6 +8,7 @@ import java.util.List;
 
 public class NoteService {
     private final INoteRepository noteRepository;
+    private final Exception exception = new Exception();
 
     public NoteService(INoteRepository noteRepository) {
         this.noteRepository = noteRepository;
