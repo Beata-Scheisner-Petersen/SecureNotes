@@ -20,7 +20,7 @@ public class MainMenuController {
     private  boolean running = true;
 
     public MainMenuController(MainMenuView view, LoginController loginController, RegisterNewUserController registerController,
-                              NoteService noteService, NoteListView noteListView, NoteEditorView noteEditorView ) {
+                              NoteService noteService, NoteListView noteListView, NoteEditorView noteEditorView, ChangePasswordView changePasswordView) {
         this.view = view;
         this.loginController = loginController;
         this.registerController = registerController;
