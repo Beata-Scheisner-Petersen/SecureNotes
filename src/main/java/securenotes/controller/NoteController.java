@@ -18,11 +18,14 @@ public class NoteController {
     private final AuthService authService;
     private final Confirmation confirmation = new Confirmation();
 
-    public NoteController(NoteService service, NoteListView listView, NoteEditorView editorView, User user) {
+    public NoteController(NoteService service, NoteListView listView, NoteEditorView editorView, User user, ChangePasswordView changePasswordView,
+                          AuthService authService) {
         this.service = service;
         this.listView = listView;
         this.editorView = editorView;
         this.user = user;
+        this.changePasswordView = changePasswordView;
+        this.authService = authService;
     }
 
     public void showNotes(Scanner readInput) {
