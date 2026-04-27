@@ -47,4 +47,22 @@ public class mySqlUserRepository implements IUserRepository {
             Logger.log("failed to save user " + user.getUsername(), e);
         }
     }
+
+    @Override
+    public void changePassword(User user) {
+        //noinspection SqlResolve
+        String sql = "UPDATE users SET password = ? WHERE id = ?";
+
+        try (Connection conn = mySqlConnectionFactory.getSqlConnection();
+             PreparedStatement statement = conn.prepareStatement(sql)) {
+
+            statement.setString(1,user.getPassword());
+            statement.setInt(2, user.getId());
+
+            statement.executeUpdate();
+
+        } catch (SQLException e) {
+            Logger.log("failed to update note", e);
+        }
+    }
 }
