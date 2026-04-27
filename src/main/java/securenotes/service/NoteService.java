@@ -16,7 +16,7 @@ public class NoteService {
 
     public List<Note> getNotesForUser(int userId, String role) {
         if (role.endsWith("admin")) {
-            return noteRepository.notesForAdmin(role);
+            return noteRepository.notesForAdmin();
         } else {
             return noteRepository.notesListByUserId(userId);
         }
@@ -33,36 +33,41 @@ public class NoteService {
                 return true;
             }
         } else {
-            System.out.println("you are not allowed to do this");
+            Logger.log("Invalid action attempt", exception);
             return false;
         }
     }
 
     public boolean updateNote(int noteId, String newTitle, String newContent, String role) {
-        Note note = noteRepository.findById(noteId);
-        if (note == null) {
+        if (role.equals("user")) {
+            Note note = noteRepository.findById(noteId);
+            if (note == null) {
+                return false;
+            }
+
+            if (newTitle.isBlank()) {
+                note.setTitle(note.getTitle());
+            } else {
+                note.setTitle(newTitle);
+            }
+
+            if (newContent.isBlank()) {
+                note.setContent(note.getContent());
+            } else {
+                note.setContent(newContent);
+            }
+
+            note.setUpdated(Logger.getFormatedDateTime());
+
+            if (note.getUpdated() == null || note.getUpdated().isBlank()) {
+                return false;
+            }
+            noteRepository.update(note);
+            return true;
+        } else {
+            Logger.log("Invalid action attempt", exception);
             return false;
         }
-
-        if (newTitle.isBlank()) {
-            note.setTitle(note.getTitle());
-        } else {
-            note.setTitle(newTitle);
-        }
-
-        if (newContent.isBlank()) {
-            note.setContent(note.getContent());
-        } else {
-            note.setContent(newContent);
-        }
-
-        note.setUpdated(Logger.getFormatedDateTime());
-
-        if (note.getUpdated() == null || note.getUpdated().isBlank()) {
-            return false;
-        }
-        noteRepository.update(note);
-        return true;
     }
 
     public boolean deleteNote(int noteId) {
