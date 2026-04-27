@@ -88,4 +88,19 @@ public class AuthService {
         }
         return true;
     }
+
+    public boolean changePassword(User user, String oldPassword, String newPassword) {
+        if (!BCrypt.checkpw(oldPassword, user.getPassword())) {
+            Logger.log("Old password is wrong", exception);
+            return false;
+        }
+        if ((newPassword.length() < 8 || newPassword.length() > 15) || !isValidPassword(newPassword)) {
+            Logger.log("Invalid password format", exception);
+            return false;
+        }
+        user.setPassword(BCrypt.hashpw(newPassword, BCrypt.gensalt()));
+        userRepository.changePassword(user);
+        return true;
+
+    }
 }
