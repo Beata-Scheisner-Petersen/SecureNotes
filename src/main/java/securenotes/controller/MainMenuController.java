@@ -15,6 +15,7 @@ public class MainMenuController {
     private final NoteService noteService;
     private final NoteListView listView;
     private final NoteEditorView noteEditorView;
+    private final ChangePasswordView changePasswordView;
 
     private  boolean running = true;
 
