@@ -48,7 +48,6 @@ public class NoteListView {
                     Choice:\s""");
             return readInput.nextLine();
         }
-        return "";
     }
 
     public int askForNoteId(Scanner readInput) {
