@@ -33,13 +33,13 @@ public class mySqlNoteRepository implements INoteRepository {
     }
 
     @Override
-    public List<Note> notesForAdmin(String role) {
+    public List<Note> notesForAdmin() {
         //noinspection SqlResolve
-        String sql = "SELECT * FROM notes WHERE role = ?";
+        String sql = "SELECT * FROM notes WHERE id > ?";
 
         try (Connection connection = mySqlConnectionFactory.getSqlConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
-            statement.setString(1, role);
+            statement.setInt(1, 0);
             ResultSet result = statement.executeQuery();
 
             notes.clear();
