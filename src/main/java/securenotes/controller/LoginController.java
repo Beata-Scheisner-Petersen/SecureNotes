@@ -34,4 +34,8 @@ public class LoginController {
     public User getLoggedInUser() {
         return loggedInUser;
     }
+
+    public AuthService getAuthService() {
+        return service;
+    }
 }
