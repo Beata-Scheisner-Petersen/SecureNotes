@@ -51,7 +51,7 @@ public class MainMenuController {
         User loggedInUser = loginController.getLoggedInUser();
 
         if (loggedInUser != null) {
-            NoteController controller = new NoteController(noteService, listView, noteEditorView, loggedInUser);
+            NoteController controller = new NoteController(noteService, listView, noteEditorView, loggedInUser, changePasswordView, loginController.getAuthService());
             controller.showNotes(readInput);
         }
         start(readInput);
