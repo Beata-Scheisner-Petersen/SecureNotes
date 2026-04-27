@@ -2,7 +2,9 @@ package securenotes.controller;
 
 import securenotes.model.Note;
 import securenotes.model.User;
+import securenotes.service.AuthService;
 import securenotes.service.NoteService;
+import securenotes.view.ChangePasswordView;
 import securenotes.view.Confirmation;
 import securenotes.view.NoteEditorView;
 import securenotes.view.NoteListView;
