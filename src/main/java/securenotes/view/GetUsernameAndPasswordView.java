@@ -13,4 +13,9 @@ public class GetUsernameAndPasswordView {
         System.out.print("Password: ");
         return readInput.nextLine();
     }
+
+    public String askForNewPassword(Scanner readInput) {
+        System.out.print("New password: ");
+        return readInput.nextLine();
+    }
 }
