@@ -70,4 +70,14 @@ public class NoteController {
             confirmation.showError("Failed to delete note");
         }
     }
+
+    private void changePassword(Scanner readInput) {
+        String oldPassword = changePasswordView.getPasswordInput(readInput);
+        String newPassword = changePasswordView.getNewPasswordInput(readInput);
+        if (authService.changePassword(user, oldPassword, newPassword)) {
+            changePasswordView.success(user.getUsername());
+        } else {
+            changePasswordView.error();
+        }
+    }
 }
