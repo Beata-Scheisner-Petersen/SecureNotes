@@ -36,15 +36,22 @@ public class NoteController {
             listView.showListOfNotes(notes);
             String choice = listView.showMenu(readInput, user.getRole());
 
-            switch (choice) {
-                case "1" -> createNote(readInput);
-                case "2" -> editNote(readInput);
-                case "3" -> deleteNote(readInput);
-                case "4" -> changePassword(readInput);
-                case "5" -> {return;}
+           if (user.getRole().endsWith("admin")) {
+               switch (choice) {
+                   case "1" -> deleteNote(readInput);
+                   case "2" -> {return;}
+               }
+           } else {
+               switch (choice) {
+                   case "1" -> createNote(readInput);
+                   case "2" -> editNote(readInput);
+                   case "3" -> deleteNote(readInput);
+                   case "4" -> changePassword(readInput);
+                   case "5" -> {return;}
 
-                default -> System.out.println("Invalid choice");
-            }
+                   default -> System.out.println("Invalid choice");
+               }
+           }
         }
     }
 
