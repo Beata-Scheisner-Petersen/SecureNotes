@@ -41,7 +41,8 @@ public class NoteListView {
                     1. Create new note
                     2. Edit note
                     3. Delete note
-                    4. Logout and return to main menu
+                    4. Change password
+                    5. Logout and return to main menu
                     Choice:\s""");
             return readInput.nextLine();
         }
