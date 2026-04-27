@@ -25,9 +25,9 @@ public class NoteController {
 
     public void showNotes(Scanner readInput) {
         while (true) {
-            List<Note> notes = service.getNotesForUser(user.getId());
+            List<Note> notes = service.getNotesForUser(user.getId(), user.getRole());
             listView.showListOfNotes(notes);
-            String choice = listView.showMenu(readInput);
+            String choice = listView.showMenu(readInput, user.getRole());
 
             switch (choice) {
                 case "1" -> createNote(readInput);
@@ -42,7 +42,7 @@ public class NoteController {
 
     private void createNote(Scanner readInput) {
 
-        if (service.createNote(user.getId(), editorView.askTitle(readInput), editorView.askContent(readInput))) {
+        if (service.createNote(user.getId(), editorView.askTitle(readInput), editorView.askContent(readInput), user.getRole())) {
             confirmation.showSuccess("Note saved");
         } else {
             confirmation.showError("failed to save note");
@@ -51,9 +51,10 @@ public class NoteController {
 
     private void editNote(Scanner readInput) {
         int id = listView.askForNoteId(readInput);
-        readInput.nextLine();
+        String title = editorView.askTitle(readInput);
+        String content = editorView.askContent(readInput);
 
-        if (service.updateNote(id, editorView.askTitle(readInput), editorView.askContent(readInput))) {
+        if (service.updateNote(id, title, content, user.getRole())) {
             confirmation.showSuccess("Note updated");
         } else {
             confirmation.showError("failed to update note");
@@ -62,7 +63,7 @@ public class NoteController {
 
     private void deleteNote(Scanner readInput) {
         int id = listView.askForNoteId(readInput);
-        readInput.nextLine();
+
         if (service.deleteNote(id)) {
             confirmation.showSuccess("Note deleted");
         } else {
