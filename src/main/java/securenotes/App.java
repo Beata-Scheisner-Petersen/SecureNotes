@@ -30,6 +30,7 @@ public class App {
         MainMenuView mainMenuView = new MainMenuView();
         NoteListView noteListView = new NoteListView();
         NoteEditorView noteEditorView = new NoteEditorView();
+        ChangePasswordView changePasswordView = new ChangePasswordView();
 
         // --- Controllers ---
         LoginController loginController = new LoginController(authService, loginView);
