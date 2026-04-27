@@ -86,8 +86,23 @@ public class AuthService {
         Matcher matcherCheckForLowercase = lowercaseCharacters.matcher(password);
         Matcher matcherCheckForNumbers = numberCharacter.matcher(password);
 
-        if (password.isBlank() || !matcherForPassword.find() || !matcherCheckForUppercase.find() || !matcherCheckForLowercase.find() ||
-                !matcherCheckForNumbers.find() || isBannedWord(password)) {
+        if (password.isBlank()) {
+            Logger.log("password can't be blank", exception);
+            return false;
+        } else if (!matcherForPassword.find()) {
+            Logger.log("Password don't have special character", exception);
+            return false;
+        } else if (!matcherCheckForUppercase.find()) {
+            Logger.log("password don't contains uppercase letter", exception);
+            return false;
+        } else if (!matcherCheckForLowercase.find()) {
+            Logger.log("password don't contains lowercase letter", exception);
+            return false;
+        } else if (!matcherCheckForNumbers.find()) {
+            Logger.log("password don't contains a number", exception);
+            return false;
+        } else if (isBannedWord(password)) {
+            Logger.log("password contains banned word", exception);
             return false;
         }
         return true;
