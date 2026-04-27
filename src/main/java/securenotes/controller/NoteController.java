@@ -14,6 +14,8 @@ public class NoteController {
     private final NoteListView listView;
     private final NoteEditorView editorView;
     private final User user;
+    private final ChangePasswordView changePasswordView;
+    private final AuthService authService;
     private final Confirmation confirmation = new Confirmation();
 
     public NoteController(NoteService service, NoteListView listView, NoteEditorView editorView, User user) {
