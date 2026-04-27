@@ -33,7 +33,8 @@ public class NoteController {
                 case "1" -> createNote(readInput);
                 case "2" -> editNote(readInput);
                 case "3" -> deleteNote(readInput);
-                case "4" -> {return;}
+                case "4" -> changePassword(readInput);
+                case "5" -> {return;}
 
                 default -> System.out.println("Invalid choice");
             }
