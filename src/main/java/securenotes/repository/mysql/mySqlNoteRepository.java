@@ -11,13 +11,35 @@ public class mySqlNoteRepository implements INoteRepository {
     private final List<Note> notes = new ArrayList<>();
 
     @Override
-    public List<Note> notesList(int userId) {
+    public List<Note> notesListByUserId(int userId) {
         //noinspection SqlResolve
         String sql = "SELECT * FROM notes WHERE users_id = ?";
 
         try (Connection connection = mySqlConnectionFactory.getSqlConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setInt(1, userId);
+            ResultSet result = statement.executeQuery();
+
+            notes.clear();
+
+            while (result.next()) {
+                notes.add(map(result));
+            }
+            return notes;
+        } catch (SQLException e) {
+            Logger.log("Failed to fetch notes for user by users_id", e);
+        }
+        return null;
+    }
+
+    @Override
+    public List<Note> notesForAdmin(String role) {
+        //noinspection SqlResolve
+        String sql = "SELECT * FROM notes WHERE role = ?";
+
+        try (Connection connection = mySqlConnectionFactory.getSqlConnection();
+             PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setString(1, role);
             ResultSet result = statement.executeQuery();
 
             notes.clear();
