@@ -3,6 +3,7 @@ package securenotes.service;
 import securenotes.logging.Logger;
 import securenotes.model.Note;
 import securenotes.repository.interfaces.INoteRepository;
+
 import java.util.List;
 
 public class NoteService {
@@ -12,22 +13,31 @@ public class NoteService {
         this.noteRepository = noteRepository;
     }
 
-    public List<Note> getNotesForUser(int userId) {
-        return noteRepository.notesList(userId);
-    }
-
-    public boolean createNote(int userId, String title, String content) {
-        Note note = new Note(userId, title, content, Logger.getFormatedDateTime(), null);
-
-        if ((note == null) || note.getContent().isBlank() || note.getCreated().isBlank() || userId < 1) {
-            return false;
+    public List<Note> getNotesForUser(int userId, String role) {
+        if (role.endsWith("admin")) {
+            return noteRepository.notesForAdmin(role);
         } else {
-            noteRepository.save(note);
-            return true;
+            return noteRepository.notesListByUserId(userId);
         }
     }
 
-    public boolean updateNote(int noteId, String newTitle, String newContent) {
+    public boolean createNote(int userId, String title, String content, String role) {
+        if (role.equals("user")) {
+            Note note = new Note(userId, title, content, Logger.getFormatedDateTime(), null);
+
+            if ((note == null) || note.getContent().isBlank() || note.getCreated().isBlank() || userId < 1) {
+                return false;
+            } else {
+                noteRepository.save(note);
+                return true;
+            }
+        } else {
+            System.out.println("you are not allowed to do this");
+            return false;
+        }
+    }
+
+    public boolean updateNote(int noteId, String newTitle, String newContent, String role) {
         Note note = noteRepository.findById(noteId);
         if (note == null) {
             return false;

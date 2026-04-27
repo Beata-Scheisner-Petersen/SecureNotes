@@ -29,15 +29,23 @@ public class NoteListView {
         }
     }
 
-    public String showMenu(Scanner readInput) {
-        System.out.print("""
-                === Note Menu ===
-                1. Create new note
-                2. Edit note
-                3. Delete note
-                4. Logout and return to main menu
-                Choice:\s""");
-        return readInput.nextLine();
+    public String showMenu(Scanner readInput, String role) {
+        if (role.endsWith("admin")) {
+            System.out.print("""
+                    === Note Menu ==
+                    1. Delete note
+                    2. Logout and return to main""");
+        } else {
+            System.out.print("""
+                    === Note Menu ===
+                    1. Create new note
+                    2. Edit note
+                    3. Delete note
+                    4. Logout and return to main menu
+                    Choice:\s""");
+            return readInput.nextLine();
+        }
+        return "";
     }
 
     public int askForNoteId(Scanner readInput) {
