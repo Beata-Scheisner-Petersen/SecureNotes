@@ -34,7 +34,9 @@ public class NoteListView {
             System.out.print("""
                     === Note Menu ==
                     1. Delete note
-                    2. Logout and return to main""");
+                    2. Logout and return to main
+                    Choice:\s""");
+            return readInput.nextLine();
         } else {
             System.out.print("""
                     === Note Menu ===
