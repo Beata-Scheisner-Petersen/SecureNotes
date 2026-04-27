@@ -4,7 +4,8 @@ import securenotes.model.Note;
 import java.util.List;
 
 public interface INoteRepository {
-    List<Note> notesList(int userId);
+    List<Note> notesListByUserId(int userId);
+    List<Note> notesForAdmin(String role);
     Note findById(int id);
     void save(Note note);
     void update(Note note);
