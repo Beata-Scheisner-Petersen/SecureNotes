@@ -40,11 +40,15 @@ public class AuthService {
             Logger.log("Register new user failed. User already exist", exception);
             System.out.println("User already exist");
             return false;
-        } else if ((username.length() < 5 || username.length() > 15 || !isValidUsername(username))) {
+        } else if ((username.length() < 5 || username.length() > 15)) {
             System.out.println("Username needs to be between 5 - 15 characters");
             return false;
-        } else if ((password.length() < 8 || password.length() > 15) || !isValidPassword(password)) {
+        } else if (!isValidUsername(username)) {
+            return false;
+        } else if ((password.length() < 8 || password.length() > 15)) {
             System.out.println("Password needs to be between 8 - 15 characters");
+            return false;
+        } else if (!isValidPassword(password)) {
             return false;
         } else {
             User user = new User(username, BCrypt.hashpw(password, BCrypt.gensalt()));
