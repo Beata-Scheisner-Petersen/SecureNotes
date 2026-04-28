@@ -87,22 +87,28 @@ public class AuthService {
         Matcher matcherCheckForNumbers = numberCharacter.matcher(password);
 
         if (password.isBlank()) {
-            Logger.log("password can't be blank", exception);
+            Logger.log("Password can't be blank", exception);
+            System.out.println("Password can't be blank");
             return false;
         } else if (!matcherForPassword.find()) {
             Logger.log("Password don't have special character", exception);
+            System.out.println("Password don't have special character");
             return false;
         } else if (!matcherCheckForUppercase.find()) {
-            Logger.log("password don't contains uppercase letter", exception);
+            Logger.log("Password don't contains uppercase letter", exception);
+            System.out.println("Password don't contains uppercase letter");
             return false;
         } else if (!matcherCheckForLowercase.find()) {
-            Logger.log("password don't contains lowercase letter", exception);
+            Logger.log("Password don't contains lowercase letter", exception);
+            System.out.println("Password don't contains lowercase letter");
             return false;
         } else if (!matcherCheckForNumbers.find()) {
-            Logger.log("password don't contains a number", exception);
+            Logger.log("Password don't contains a number", exception);
+            System.out.println("Password don't contains a number");
             return false;
         } else if (isBannedWord(password)) {
-            Logger.log("password contains banned word", exception);
+            Logger.log("Password contains banned word", exception);
+            System.out.println("Password contains banned word");
             return false;
         }
         return true;
