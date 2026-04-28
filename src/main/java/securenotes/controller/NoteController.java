@@ -87,6 +87,7 @@ public class NoteController {
     }
 
     private void changePassword(Scanner readInput) {
+        changePasswordView.show();
         String oldPassword = changePasswordView.getPasswordInput(readInput);
         String newPassword = changePasswordView.getNewPasswordInput(readInput);
         if (authService.changePassword(user, oldPassword, newPassword)) {
