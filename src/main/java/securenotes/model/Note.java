@@ -28,16 +28,8 @@ public class Note {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public int getUserId() {
         return userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
     }
 
     public String getTitle() {
@@ -58,10 +50,6 @@ public class Note {
 
     public String getCreated() {
         return created;
-    }
-
-    public void setCreated(String created) {
-        this.created = created;
     }
 
     public String getUpdated() {
