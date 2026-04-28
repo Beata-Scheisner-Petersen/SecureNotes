@@ -19,10 +19,10 @@ public class RegisterNewUserView {
     }
 
     public void success(String username) {
-        confirmation.showSuccess(String.format("You success to create a new user with username: %s", username));
+        confirmation.showSuccess(String.format("an account with username: %s is created", username));
     }
 
     public void error(String username) {
-        confirmation.showError(String.format("You failed to create a new user with username: %s", username));
+        confirmation.showError(String.format("Failed to create a new account with username: %s", username));
     }
 }
