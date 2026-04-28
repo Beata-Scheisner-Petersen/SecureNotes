@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class LoginView {
     private final GetUsernameAndPasswordView credentials = new GetUsernameAndPasswordView();
-    private final Confirmation confirmation = new Confirmation();
+    private final ConfirmationView confirmationView = new ConfirmationView();
 
     public void show() {
         System.out.println("=== Login ===");
@@ -19,10 +19,10 @@ public class LoginView {
     }
 
     public void success(String username) {
-        confirmation.showSuccess(String.format("You success to login with username: %s", username));
+        confirmationView.showSuccess(String.format("You success to login with username: %s", username));
     }
 
     public void error() {
-        confirmation.showError("You failed to login: wrong username or password!");
+        confirmationView.showError("You failed to login: wrong username or password!");
     }
 }

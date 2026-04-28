@@ -5,7 +5,7 @@ import securenotes.model.User;
 import securenotes.service.AuthService;
 import securenotes.service.NoteService;
 import securenotes.view.ChangePasswordView;
-import securenotes.view.Confirmation;
+import securenotes.view.ConfirmationView;
 import securenotes.view.NoteEditorView;
 import securenotes.view.NoteListView;
 import java.util.List;
@@ -18,7 +18,7 @@ public class NoteController {
     private final User user;
     private final ChangePasswordView changePasswordView;
     private final AuthService authService;
-    private final Confirmation confirmation = new Confirmation();
+    private final ConfirmationView confirmationView = new ConfirmationView();
 
     public NoteController(NoteService service, NoteListView listView, NoteEditorView editorView, User user, ChangePasswordView changePasswordView,
                           AuthService authService) {
@@ -58,9 +58,9 @@ public class NoteController {
     private void createNote(Scanner readInput) {
 
         if (service.createNote(user.getId(), editorView.askTitle(readInput), editorView.askContent(readInput), user.getRole())) {
-            confirmation.showSuccess("Note saved");
+            confirmationView.showSuccess("Note saved");
         } else {
-            confirmation.showError("failed to save note");
+            confirmationView.showError("failed to save note");
         }
     }
 
@@ -70,9 +70,9 @@ public class NoteController {
         String content = editorView.askContent(readInput);
 
         if (service.updateNote(id, title, content, user.getRole())) {
-            confirmation.showSuccess("Note updated");
+            confirmationView.showSuccess("Note updated");
         } else {
-            confirmation.showError("failed to update note");
+            confirmationView.showError("failed to update note");
         }
     }
 
@@ -80,9 +80,9 @@ public class NoteController {
         int id = listView.askForNoteId(readInput);
 
         if (service.deleteNote(id)) {
-            confirmation.showSuccess("Note deleted");
+            confirmationView.showSuccess("Note deleted");
         } else {
-            confirmation.showError("Failed to delete note");
+            confirmationView.showError("Failed to delete note");
         }
     }
 

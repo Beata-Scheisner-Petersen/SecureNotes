@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class ChangePasswordView {
     private final GetUsernameAndPasswordView credentials = new GetUsernameAndPasswordView();
-    private final Confirmation confirmation = new Confirmation();
+    private final ConfirmationView confirmationView = new ConfirmationView();
 
     public void show() {
         System.out.println("=== Change password ===");
@@ -19,10 +19,10 @@ public class ChangePasswordView {
 
 
     public void success(String username) {
-        confirmation.showSuccess("Password change");
+        confirmationView.showSuccess("Password change");
     }
 
     public void error() {
-        confirmation.showError("Password failed to change");
+        confirmationView.showError("Password failed to change");
     }
 }
