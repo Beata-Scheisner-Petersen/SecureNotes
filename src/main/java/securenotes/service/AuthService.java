@@ -41,8 +41,10 @@ public class AuthService {
             System.out.println("User already exist");
             return false;
         } else if ((username.length() < 5 || username.length() > 15 || !isValidUsername(username))) {
+            System.out.println("Username needs to be between 5 - 15 characters");
             return false;
         } else if ((password.length() < 8 || password.length() > 15) || !isValidPassword(password)) {
+            System.out.println("Password needs to be between 8 - 15 characters");
             return false;
         } else {
             User user = new User(username, BCrypt.hashpw(password, BCrypt.gensalt()));
@@ -56,9 +58,11 @@ public class AuthService {
         Matcher matcherForUsername = specialCharacters.matcher(username);
 
         if (username.isBlank() || matcherForUsername.find()) {
+            System.out.println("Username can't contain special characters or be empty");
             Logger.log("username is empty or have special character", exception);
             return false;
         } else if (isBannedWord(username)) {
+            System.out.println("Username can't contain banned words");
             Logger.log("username contains banned word", exception);
             return false;
         }
