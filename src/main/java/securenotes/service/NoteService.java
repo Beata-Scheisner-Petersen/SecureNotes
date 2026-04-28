@@ -3,7 +3,6 @@ package securenotes.service;
 import securenotes.logging.Logger;
 import securenotes.model.Note;
 import securenotes.repository.interfaces.INoteRepository;
-
 import java.util.List;
 
 public class NoteService {
