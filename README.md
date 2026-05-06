@@ -1,5 +1,5 @@
 
-# Secure_Note
+# SecureNote
 _A simple console‑based notes application built with Java using an MVC architecture. Users can register, log in, manage personal notes, and update their password. The project follows a clean separation of concerns with services handling business logic and repositories managing MySQL data storage._
 
 
