@@ -5,8 +5,8 @@ import securenotes.controller.MainMenuController;
 import securenotes.controller.RegisterNewUserController;
 import securenotes.repository.interfaces.INoteRepository;
 import securenotes.repository.interfaces.IUserRepository;
-import securenotes.repository.mysql.mySqlNoteRepository;
-import securenotes.repository.mysql.mySqlUserRepository;
+import securenotes.repository.mysql.MySqlNoteRepository;
+import securenotes.repository.mysql.MySqlUserRepository;
 import securenotes.service.AuthService;
 import securenotes.service.NoteService;
 import securenotes.view.*;
@@ -17,8 +17,8 @@ public class App {
         Scanner readInput = new Scanner(System.in);
 
         // --- Repositories ---
-        IUserRepository userRepository = new mySqlUserRepository();
-        INoteRepository noteRepository = new mySqlNoteRepository();
+        IUserRepository userRepository = new MySqlUserRepository();
+        INoteRepository noteRepository = new MySqlNoteRepository();
 
         // --- Services ---
         AuthService authService = new AuthService(userRepository);

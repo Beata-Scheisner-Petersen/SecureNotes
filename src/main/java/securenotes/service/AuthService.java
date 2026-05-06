@@ -4,14 +4,14 @@ import org.mindrot.jbcrypt.BCrypt;
 import securenotes.logging.Logger;
 import securenotes.model.User;
 import securenotes.repository.interfaces.IUserRepository;
-import securenotes.repository.mysql.mySqlBannedWordRepository;
+import securenotes.repository.mysql.MySqlBannedWordRepository;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class AuthService {
     private final IUserRepository userRepository;
-    private final mySqlBannedWordRepository bannedWordRepository = new mySqlBannedWordRepository();
+    private final MySqlBannedWordRepository bannedWordRepository = new MySqlBannedWordRepository();
     private final List<String> blacklistedContent = bannedWordRepository.getBannedWords();
     private final Exception exception = new Exception();
 

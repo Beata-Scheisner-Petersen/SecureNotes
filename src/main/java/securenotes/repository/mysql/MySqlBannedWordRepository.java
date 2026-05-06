@@ -9,14 +9,14 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class mySqlBannedWordRepository implements IBannedWordRepository {
+public class MySqlBannedWordRepository implements IBannedWordRepository {
     private final List<String> bannedWords = new ArrayList<>();
     @Override
     public List<String> getBannedWords() {
         //noinspection SqlResolve
         String sql = "SELECT word FROM banned_words";
 
-        try (Connection connection = mySqlConnectionFactory.getSqlConnection();
+        try (Connection connection = MySqlConnectionFactory.getSqlConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
             ResultSet result = statement.executeQuery();
 

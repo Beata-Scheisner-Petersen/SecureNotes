@@ -7,7 +7,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class mySqlNoteRepository implements INoteRepository {
+public class MySqlNoteRepository implements INoteRepository {
     private final List<Note> notes = new ArrayList<>();
 
     @Override
@@ -15,7 +15,7 @@ public class mySqlNoteRepository implements INoteRepository {
         //noinspection SqlResolve
         String sql = "SELECT * FROM notes WHERE users_id = ?";
 
-        try (Connection connection = mySqlConnectionFactory.getSqlConnection();
+        try (Connection connection = MySqlConnectionFactory.getSqlConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setInt(1, userId);
             ResultSet result = statement.executeQuery();
@@ -37,7 +37,7 @@ public class mySqlNoteRepository implements INoteRepository {
         //noinspection SqlResolve
         String sql = "SELECT * FROM notes WHERE id > ?";
 
-        try (Connection connection = mySqlConnectionFactory.getSqlConnection();
+        try (Connection connection = MySqlConnectionFactory.getSqlConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setInt(1, 0);
             ResultSet result = statement.executeQuery();
@@ -59,7 +59,7 @@ public class mySqlNoteRepository implements INoteRepository {
         //noinspection SqlResolve
         String sql = "SELECT * FROM notes WHERE id = ?";
 
-        try (Connection connection = mySqlConnectionFactory.getSqlConnection();
+        try (Connection connection = MySqlConnectionFactory.getSqlConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setInt(1, id);
             ResultSet result = statement.executeQuery();
@@ -78,7 +78,7 @@ public class mySqlNoteRepository implements INoteRepository {
         //noinspection SqlResolve
         String sql = "INSERT INTO notes (users_id, title, content, createAt) VALUES (?, ?, ?, ?)";
 
-        try (Connection conn = mySqlConnectionFactory.getSqlConnection();
+        try (Connection conn = MySqlConnectionFactory.getSqlConnection();
              PreparedStatement statement = conn.prepareStatement(sql)) {
 
             statement.setInt(1, note.getUserId());
@@ -98,7 +98,7 @@ public class mySqlNoteRepository implements INoteRepository {
         //noinspection SqlResolve
         String sql = "UPDATE notes SET title = ?, content = ?, updatedAt = ? WHERE id = ?";
 
-        try (Connection conn = mySqlConnectionFactory.getSqlConnection();
+        try (Connection conn = MySqlConnectionFactory.getSqlConnection();
              PreparedStatement statement = conn.prepareStatement(sql)) {
 
             statement.setString(1, note.getTitle());
@@ -118,7 +118,7 @@ public class mySqlNoteRepository implements INoteRepository {
         //noinspection SqlResolve
         String sql = "DELETE FROM notes WHERE id = ?";
 
-        try (Connection conn = mySqlConnectionFactory.getSqlConnection();
+        try (Connection conn = MySqlConnectionFactory.getSqlConnection();
              PreparedStatement statement = conn.prepareStatement(sql)) {
 
             statement.setInt(1, id);

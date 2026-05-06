@@ -8,14 +8,14 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class mySqlUserRepository implements IUserRepository {
+public class MySqlUserRepository implements IUserRepository {
 
     @Override
     public User findByUsername(String username) {
         //noinspection SqlResolve
         String sql = "SELECT * FROM users WHERE username = ?";
 
-        try(Connection connection = mySqlConnectionFactory.getSqlConnection();
+        try(Connection connection = MySqlConnectionFactory.getSqlConnection();
             PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, username);
             ResultSet result = statement.executeQuery();
@@ -37,7 +37,7 @@ public class mySqlUserRepository implements IUserRepository {
         //noinspection SqlResolve
         String insert = "INSERT INTO users (username, password) VALUES (?, ?)";
 
-        try (Connection connection = mySqlConnectionFactory.getSqlConnection();
+        try (Connection connection = MySqlConnectionFactory.getSqlConnection();
              PreparedStatement statement = connection.prepareStatement(insert)) {
             statement.setString(1, user.getUsername());
             statement.setString(2, user.getPassword());
@@ -53,7 +53,7 @@ public class mySqlUserRepository implements IUserRepository {
         //noinspection SqlResolve
         String sql = "UPDATE users SET password = ? WHERE id = ?";
 
-        try (Connection conn = mySqlConnectionFactory.getSqlConnection();
+        try (Connection conn = MySqlConnectionFactory.getSqlConnection();
              PreparedStatement statement = conn.prepareStatement(sql)) {
 
             statement.setString(1,user.getPassword());
